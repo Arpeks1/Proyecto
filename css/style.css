@@ -3,13 +3,22 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    margin: 0;
+    padding: 0;
+}
 /* header */
 .encabezado{
-    height: 120px;
+    min-height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #6f8D35 ;
+    background: #698D35;
+    /* background-image: url(../src/banners/);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw; */
 }
 .encabezado img{
     border-radius: 15px;
@@ -63,7 +72,7 @@
     overflow: hidden;
     width: 85%;
     border-radius: 10px;
-    background: #ECECEC;
+    background: #A7DF59;
     padding: 20px 0px;
     box-shadow: 2px 2px 4px black;
     margin: 25px auto;
@@ -94,4 +103,186 @@
     to{
         transform: translateX(calc(-5 * (12rem + 2rem)));
     }
+}
+#TituloP{
+    text-align: center;
+    margin: 20px auto;
+    font-size: xx-large;
+    padding-bottom: 5px;
+}
+.banner{
+    display: flex;
+    background: black;
+    margin: auto 25px;
+    border-radius: 15px;
+    filter: drop-shadow( 0px 2px 6px rgb(85, 84, 84));
+}
+.banner div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto 35px;
+}
+.banner div img{
+    max-width: 350px;
+    height: 250px;
+    margin: 10px auto;
+}
+.banner h2{
+    color: rgb(202, 199, 199);
+    font-size: 40px;
+    margin: 10px auto;
+    padding-bottom: 5px;
+    transition: 0.1s ease-in-out;
+}
+.banner h2:hover{
+    color: #dbc848;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, #c86d14, #962f33)1;
+}
+.banner p{
+    color: rgb(202, 199, 199);
+    margin-left: 10px;
+    font-weight: 400;
+}
+#Banner{
+    max-height: 500px;
+    width: 130%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.Informacion{
+    padding: 25px;
+}
+.destacados{
+    display: flex;
+    justify-content: space-evenly;
+}
+.tarjetas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #f3f5f2;
+    max-width: 500px;
+    max-height: 750px;
+    border-radius: 15px;
+    filter: drop-shadow(2px 5px 3px darkgray);
+    transition: 0.3s ease-in-out;
+}
+.tarjetas:hover{
+    transform: scale(0.95);
+    filter: drop-shadow(2px 2px 2px black);
+}
+.producto{
+    width: 450px;
+    max-height: 450px;
+    border-radius: 20px;
+    margin: 10px auto;
+}
+.tarjetas h3{
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+.tarjetas p{
+    text-align: center;
+}
+.precios{
+    display: flex;
+    margin: 10px 0px;
+    justify-content: space-around;
+    align-items: center;
+}
+.precios b{
+    color:#62a10a;
+    font-weight: 500;
+    font-size: 25px;
+}
+.precios button{
+    display: flex;
+    margin-left: 25px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: snow;
+    transition: 0.1s ease-in-out;
+}
+.precios button:active{
+    background: #698D35;
+    color: whitesmoke;
+    transform: scale(0.95);
+    filter: drop-shadow(2px 2px 6px #7ca83f);
+}
+.precios button p{
+    align-self: center;
+    padding: 0px 5px;
+}
+.carrito{
+    width: 20px;
+    height: 20px;
+}
+/* footer */
+.pie{
+    background: #698D35;
+    display: flex;
+    justify-content: space-evenly;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.info img{
+    height: 250px;
+    width: 200px;
+    transition: 0.4s ease-in-out;
+}
+.info img:hover{
+    transform: scale(0.9) rotate(2deg);
+    filter: drop-shadow(3px 3px 6px #962f33);
+}
+.redes img{
+    margin-top: 10px;
+    width: 70px;
+    height: 70px;
+    transition: 0.5s ease-in-out;
+}
+.redes img:hover{
+    transform: scale(0.9);
+    filter: drop-shadow(2px 2px 8px white);
+}
+.logos{
+    display: flex;
+    justify-content: space-evenly;
+}
+.mapa iframe{
+    height: 200px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px #f5e15e;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+.mapa iframe:hover{
+    transform: scale(0.9);
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.nav a{
+    text-decoration: none;
+    color: #ebebeb;
+    text-shadow: 4px 4px 6px black;
+    font-size: 25px;
+    margin: 12.5% 0;
+    transition: 0.1s ease-in-out;
+    padding-bottom: 5px;
+}
+.nav a:hover{
+    transform: scale(0.9);
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, #c86d14, #962f33)1;
 }
