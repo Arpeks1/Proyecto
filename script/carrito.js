@@ -1,10 +1,10 @@
-// window.cargarcarrito = function() {
-//     Swal.fire({
-//         title: "The producto is a enter in the changuito, nene",
-//         icon: "success",
-//         draggable: true
-//     });
-// }
+window.cargarcarrito = function() {
+    Swal.fire({
+        title: "The producto is a enter in the changuito, nene",
+        icon: "success",
+        draggable: true
+    });
+}
 
 // ----> estado del carrito
 let carrito = [];
