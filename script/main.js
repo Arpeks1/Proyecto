@@ -8,20 +8,28 @@ function TraerDatos(Datos) {
     Datos.forEach(i => {
         let ContenedorAux = document.createElement('div')
         ContenedorAux.className = 'Tarjetas'
+        ContenedorAux.dataset.id = i.ID
 
         ContenedorAux.innerHTML =
             `
+            <button class="fav-btn"><img src="../src/iconos/corazon.png" alt="favorito"></button>
             <h1>${i.Nombre}</h1>
             <h2>$${i.Precio}</h2>
             <h3>Cantidad: ${i.Stock}</h3>
             <p>${i.Descripcion}</p>
-            <img src="${i.Imagen}" alt="img">
-             ${i.Stock<17 ? '<span>Stock Bajo</span>' : ""}
-            <button class="btn btn-primary" onclick="cargarcarrito()"> agrega al carrito </button>
+            <img src="${i.Imagen}" alt="img" class="producto">
+             ${i.Stock<17 ? '<span style=color:red>Stock Bajo</span>' : ""}
+            <button class="btn-comprar"><img src="../src/iconos/carrito.png" alt="" class="carrito"><p>agrega al carrito</p></button>
 
         `
         Contenedor.appendChild(ContenedorAux)
     });
+
+    // vuelve a marcar los corazones de los productos que ya son favoritos
+    // (hace falta porque las tarjetas se regeneran enteras cada vez que se filtra)
+    if (typeof window.marcarFavoritosEnPantalla === 'function') {
+        window.marcarFavoritosEnPantalla();
+    }
 
 }
 
@@ -49,6 +57,7 @@ Filtro.addEventListener('keyup', function () {
 const borrarfiltros = document.getElementById("todo")
 const FiltroPinturas = document.getElementById("pinturas")
 const FiltroMiniatura = document.getElementById("miniatura")
+const FiltroFigura = document.getElementById("figura")
 const FiltroExtra = document.getElementById("extra")
 const FiltroRopa = document.getElementById("ropa")
 const FiltroLibro = document.getElementById("libro")
@@ -96,4 +105,3 @@ FiltroLibro.addEventListener("click", () => {
 FiltroRopa.addEventListener("click", () => {
     FiltrarDatos("ropa")
 })
-

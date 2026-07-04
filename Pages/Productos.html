@@ -6,6 +6,7 @@
     <title>Waghnet</title>
     <link rel="stylesheet" href="../css/Productos.css">
     <link rel="shortcut icon" href="../src/logos/Logo 40K Blanco.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header class="encabezado">
@@ -50,11 +51,13 @@
     <main class="principal">
         <section class="Filtros">
             <div class="Checklist">
-                <label><input type="checkbox" name="" id="pinturas">Pinturas🎨</label>
-                <label><input type="checkbox" name="" id="miniatura">Miniaturas🕴</label>
-                <label><input type="checkbox" name="" id="ropa">Ropa👔</label>
-                <label><input type="checkbox" name="" id="libro">Libros📖</label>
-                <label><input type="checkbox" name="" id="extra">Extra💲</label>
+                <label><input type="button" name="filtro" id="todo">Todos✅</label>
+                <label><input type="checkbox" name="filtro" id="pinturas">Pinturas🎨</label>
+                <label><input type="checkbox" name="filtro" id="miniatura">Miniaturas🕴</label>
+                <label><input type="checkbox" name="filtro" id="figura">Figuras🗿</label>
+                <label><input type="checkbox" name="filtro" id="ropa">Ropa👔</label>
+                <label><input type="checkbox" name="filtro" id="libro">Libros📖</label>
+                <label><input type="checkbox" name="filtro" id="extra">Extra💲</label>
             </div>
         </section>
 
@@ -91,5 +94,8 @@
         </div>
     </footer>
     <script type="module" src="../script/main.js"></script>
+    <script src="../script/carrito.js"></script>
+    <script src="../script/favorito.js"></script>
+
 </body>
 </html>

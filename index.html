@@ -7,47 +7,19 @@
     <title>Waghnet</title>
     <link rel="shortcut icon" href="./src/logos/Logo 40K Blanco.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
     <header class="encabezado">
         <img src="./src/logos/Logo 40K Blanco.png" alt="logo">
+
         <nav class="menu">
-            <a href="./Pages/Nosotros.html" class="extra">Nosotros</a>
-            <a href="./Pages/Productos.html" class="extra">Productos</a>
-            <a href="" class="extra">Galeria</a>
-            <a href="./Pages/Contactos.html" class="contactos">Contactos</a>
-            <div class="carrito-nav" id="carrito-nav">
-                <img src="./src/iconos/carrito.png" alt="carrito" class="icono-carrito-nav">
-                <span class="contador-carrito" id="contador-carrito">0</span>
+    <a href="./Pages/Nosotros.html" class="extra">Nosotros</a>
+    <a href="./Pages/Productos.html" class="extra">Productos</a>
+    <a href="" class="extra">Galeria</a>
+    <a href="./Pages/Contactos.html" class="contactos">Contactos</a>
+    </nav>
 
-                <div class="panel-carrito" id="panel-carrito">
-                    <div class="panel-carrito-header">
-                        <h4>Tu carrito</h4>
-                        <button id="vaciar-carrito" class="vaciar-carrito">Vaciar carrito</button>
-                    </div>
-                    <div class="lista-carrito" id="lista-carrito">
-                        <p class="carrito-vacio">Tu carrito está vacío</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="favoritos-nav" id="favoritos-nav">
-                <img src="./src/iconos/corazon.png" alt="favoritos" class="icono-favoritos-nav">
-                <span class="contador-favoritos" id="contador-favoritos">0</span>
-
-                <div class="panel-favoritos" id="panel-favoritos">
-                    <div class="panel-carrito-header">
-                        <h4>Tus favoritos</h4>
-                        <button id="vaciar-favoritos" class="vaciar-carrito">Vaciar favoritos</button>
-                    </div>
-                    <div class="lista-favoritos" id="lista-favoritos">
-                        <p class="carrito-vacio">No tenés favoritos guardados</p>
-                    </div>
-                </div>
-            </div>
-        </nav>
     </header>
     <main class="principal">
         <h2 class="Titulos D">Nuestros productos destacados</h2>
@@ -120,50 +92,47 @@
         <section class="Informacion">
             <div class="destacados">
                 <div class="tarjetas">
-                    <button class="fav-btn"><img src="./src/iconos/corazon.png" alt="favorito"></button>
-                    <img src="./src/skull.jpeg" alt="" class="producto">
-                    <h3> Figura Coleccionable</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
-                        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
-                        facere vero consequuntur mollitia.</p>
-                    <div class="precios">
-                        
-                        <b>$25</b>
-                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito">
-                            <p>Comprar</p>
-                        </button>
-                    </div>
-                </div>
+    <img src="./src/skull.jpeg" alt="" class="producto">
+    <h3> Figura Coleccionable</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
+        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
+        facere vero consequuntur mollitia.</p>
+    <div class="precios">
+        <b>$25</b>
+        <a href="./Pages/Productos.html" class="btn-comprar">
+            <img src="./src/iconos/carrito.png" alt="" class="carrito">
+            <p>Ver en la tienda</p>
+        </a>
+    </div>
+</div>
                 <div class="tarjetas">
-                    <button class="fav-btn"><img src="./src/iconos/corazon.png" alt="favorito"></button>
-                    <img src="./src/skull.jpeg" alt="" class="producto">
-                    <h3> Figura Coleccionable</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
-                        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
-                        facere vero consequuntur mollitia.</p>
-                    <div class="precios">
-                        
-                        <b>$25</b>
-                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito">
-                            <p>Comprar</p>
-                        </button>
-                    </div>
-                </div>
+    <img src="./src/skull.jpeg" alt="" class="producto">
+    <h3> Figura Coleccionable</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
+        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
+        facere vero consequuntur mollitia.</p>
+    <div class="precios">
+        <b>$25</b>
+        <a href="./Pages/Productos.html" class="btn-comprar">
+            <img src="./src/iconos/carrito.png" alt="" class="carrito">
+            <p>Ver en la tienda</p>
+        </a>
+    </div>
+</div>
                 <div class="tarjetas">
-                    <button class="fav-btn"><img src="./src/iconos/corazon.png" alt="favorito"></button>
-                    <img src="./src/skull.jpeg" alt="" class="producto">
-                    <h3> Figura Coleccionable</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
-                        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
-                        facere vero consequuntur mollitia.</p>
-                    <div class="precios">
-                        <b>$25</b>
-                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito">
-                            <p>Comprar</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <img src="./src/skull.jpeg" alt="" class="producto">
+    <h3> Figura Coleccionable</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
+        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
+        facere vero consequuntur mollitia.</p>
+    <div class="precios">
+        <b>$25</b>
+        <a href="./Pages/Productos.html" class="btn-comprar">
+            <img src="./src/iconos/carrito.png" alt="" class="carrito">
+            <p>Ver en la tienda</p>
+        </a>
+    </div>
+</div>
         </section>
     </main>
     <footer class="pie">
@@ -194,9 +163,6 @@
         </div>
     </footer>
 
-    <script src="./script/carrito.js"></script>
-    <script src="./script/main.js"></script>
-    <script src="./script/favorito.js"></script>
 </body>
 
 </html>

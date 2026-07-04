@@ -218,7 +218,8 @@
     font-weight: 500;
     font-size: 25px;
 }
-.precios button{
+.precios button,
+.precios .btn-comprar{
     display: flex;
     margin-left: 25px;
     padding: 5px;
@@ -226,14 +227,18 @@
     background-color: snow;
     cursor: pointer;
     transition: 0.1s ease-in-out;
+    text-decoration: none;
+    color: inherit;
 }
-.precios button:active{
+.precios button:active,
+.precios .btn-comprar:active{
     background: #698D35;
     color: whitesmoke;
     transform: scale(0.95);
     filter: drop-shadow(2px 2px 6px #7ca83f);
 }
-.precios button p{
+.precios button p,
+.precios .btn-comprar p{
     align-self: center;
     padding: 0px 5px;
 }

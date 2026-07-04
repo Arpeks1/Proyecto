@@ -9,7 +9,7 @@ window.cargarcarrito = function() {
 // ----> estado del carrito
 let carrito = [];
 
-function actualizarContador() {
+function actualizarContadorCarrito() {
     const contador = document.getElementById('contador-carrito');
     if (contador) {
         contador.textContent = carrito.length;
@@ -30,7 +30,7 @@ function renderizarCarrito() {
             <img src="${producto.imagen}" alt="${producto.nombre}">
             <div class="info-item">
                 <p>${producto.nombre}</p>
-                <b>${producto.precio}</b>
+                <b>$${producto.precio}</b>
             </div>
             <button class="eliminar-item" data-index="${index}">✕</button>
         </div>
@@ -39,67 +39,88 @@ function renderizarCarrito() {
 
 function agregarAlCarrito(producto) {
     carrito.push(producto);
-    actualizarContador();
+    actualizarContadorCarrito();
     renderizarCarrito();
 }
 
 function eliminarDelCarrito(index) {
     carrito.splice(index, 1);
-    actualizarContador();
+    actualizarContadorCarrito();
     renderizarCarrito();
 }
 
 function vaciarCarrito() {
     carrito = [];
-    actualizarContador();
+    actualizarContadorCarrito();
     renderizarCarrito();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // click en "Comprar" de cada tarjeta
-    const botonesComprar = document.querySelectorAll('.precios button');
-    botonesComprar.forEach(boton => {
-        boton.addEventListener('click', () => {
-            const tarjeta = boton.closest('.tarjetas');
-            const producto = {
-                nombre: tarjeta.querySelector('h3').textContent.trim(),
-                precio: tarjeta.querySelector('.precios b').textContent.trim(),
-                imagen: tarjeta.querySelector('.producto').getAttribute('src')
-            };
-            agregarAlCarrito(producto);
-            cargarcarrito();
-        });
-    });
+// saca nombre/precio/imagen/id de la tarjeta de producto (generada por main.js)
+function extraerProductoDeTarjeta(tarjeta) {
+    return {
+        id: tarjeta.dataset.id,
+        nombre: tarjeta.querySelector('h1').textContent.trim(),
+        precio: tarjeta.querySelector('h2').textContent.replace('$', '').trim(),
+        imagen: tarjeta.querySelector('img.producto').getAttribute('src')
+    };
+}
 
-    // abrir/cerrar el panel al clickear el ícono del carrito
+document.addEventListener('DOMContentLoaded', () => {
     const carritoNav = document.getElementById('carrito-nav');
     const panelCarrito = document.getElementById('panel-carrito');
-    carritoNav.addEventListener('click', (e) => {
-        // evitamos que el click en el panel (eliminar/vaciar) cierre y vuelva a abrir
-        if (e.target.closest('.panel-carrito') && !e.target.classList.contains('carrito-nav')) {
-            if (!e.target.classList.contains('icono-carrito-nav')) return;
-        }
-        panelCarrito.classList.toggle('activo');
-    });
+    const listaCarrito = document.getElementById('lista-carrito');
+    const vaciarBtn = document.getElementById('vaciar-carrito');
 
-    // eliminar un producto individual (delegación de eventos)
-    document.getElementById('lista-carrito').addEventListener('click', (e) => {
-        if (e.target.classList.contains('eliminar-item')) {
-            const index = Number(e.target.dataset.index);
-            eliminarDelCarrito(index);
-        }
-    });
+    // abrir/cerrar el panel al clickear el icono del carrito
+    if (carritoNav && panelCarrito) {
+        carritoNav.addEventListener('click', () => {
+            panelCarrito.classList.toggle('activo');
+        });
+
+        // que el click DENTRO del panel no lo cierre
+        panelCarrito.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        // cerrar el panel si se clickea afuera
+        document.addEventListener('click', (e) => {
+            if (!carritoNav.contains(e.target)) {
+                panelCarrito.classList.remove('activo');
+            }
+        });
+    }
+
+    // eliminar un producto individual del carrito (delegacion de eventos)
+    if (listaCarrito) {
+        listaCarrito.addEventListener('click', (e) => {
+            if (e.target.classList.contains('eliminar-item')) {
+                e.stopPropagation();
+                const index = Number(e.target.dataset.index);
+                eliminarDelCarrito(index);
+            }
+        });
+    }
 
     // vaciar todo el carrito
-    document.getElementById('vaciar-carrito').addEventListener('click', (e) => {
-        e.stopPropagation();
-        vaciarCarrito();
-    });
+    if (vaciarBtn) {
+        vaciarBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            vaciarCarrito();
+        });
+    }
 
-    // cerrar el panel si se clickea afuera
+    // click en "agregar al carrito" de cualquier producto.
+    // Usa delegacion sobre document porque las tarjetas se regeneran
+    // enteras cada vez que se filtra o busca en Productos.html
     document.addEventListener('click', (e) => {
-        if (!carritoNav.contains(e.target)) {
-            panelCarrito.classList.remove('activo');
-        }
+        const boton = e.target.closest('.btn-comprar');
+        if (!boton) return;
+
+        const tarjeta = boton.closest('.Tarjetas');
+        if (!tarjeta) return;
+
+        const producto = extraerProductoDeTarjeta(tarjeta);
+        agregarAlCarrito(producto);
+        cargarcarrito();
     });
 });

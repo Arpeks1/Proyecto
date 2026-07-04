@@ -386,7 +386,7 @@ export const DB=[
     {
         ID:49,
         Nombre: "Extra",
-        Precio:"30000",
+        Precio:"300000",
         Stock:"29",
         Descripcion:"Mouse pad de 60 x 120 cm con el la pagina",
         Imagen:"../src/productos/49.png"
@@ -394,7 +394,7 @@ export const DB=[
     {
         ID:50,
         Nombre: "Extra",
-        Precio:"35600",
+        Precio:"40000",
         Stock:"20",
         Descripcion:"Mate tematizado de los ORKOS de Warhammer 40k",
         Imagen:"../src/productos/50.png"
