@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waghnet</title>
+    <link rel="stylesheet" href="../css/Productos.css">
+    <link rel="shortcut icon" href="../src/logos/Logo 40K Blanco.png" type="image/x-icon">
+</head>
+<body>
+    <header class="encabezado">
+        <img src="../src/logos/Logo 40K Blanco.png" alt="logo">
+        <nav class="menu">
+            <a href="./Nosotros.html" class="extra">Nosotros</a>
+            <a href="../index.html" class="contactos">Regresar</a>
+            <a href="" class="extra">Galeria</a>
+            <a href="./Contactos.html" class="extra">Contactos</a>
+
+            <div class="carrito-nav" id="carrito-nav">
+                <img src="../src/iconos/carrito.png" alt="carrito" class="icono-carrito-nav">
+                <span class="contador-carrito" id="contador-carrito">0</span>
+
+                <div class="panel-carrito" id="panel-carrito">
+                    <div class="panel-carrito-header">
+                        <h4>Tu carrito</h4>
+                        <button id="vaciar-carrito" class="vaciar-carrito">Vaciar carrito</button>
+                    </div>
+                    <div class="lista-carrito" id="lista-carrito">
+                        <p class="carrito-vacio">Tu carrito está vacío</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="favoritos-nav" id="favoritos-nav">
+                <img src="../src/iconos/corazon.png" alt="favoritos" class="icono-favoritos-nav">
+                <span class="contador-favoritos" id="contador-favoritos">0</span>
+
+                <div class="panel-favoritos" id="panel-favoritos">
+                    <div class="panel-carrito-header">
+                        <h4>Tus favoritos</h4>
+                        <button id="vaciar-favoritos" class="vaciar-carrito">Vaciar favoritos</button>
+                    </div>
+                    <div class="lista-favoritos" id="lista-favoritos">
+                        <p class="carrito-vacio">No tenés favoritos guardados</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="principal">
+        <section class="Filtros">
+            <div class="Checklist">
+                <label><input type="checkbox" name="" id="">Pinturas🎨</label>
+                <label><input type="checkbox" name="" id="">Miniaturas🕴</label>
+                <label><input type="checkbox" name="" id="">Ropa👔</label>
+                <label><input type="checkbox" name="" id="">Libros📖</label>
+                <label><input type="checkbox" name="" id="">Extra💲</label>
+            </div>
+        </section>
+
+        <section class="Productos">
+            <div class="Filtro-Barra">
+                <input type="text" id="Filtro">
+            </div>
+            <div class="contenedor">
+            </div>
+        </section>
+    </main>
+    <footer class="pie">
+        <div class="info">
+            <img src="../src/logos/Logo 40K Blanco.png" alt="Logo">
+            <h2>© 2026 Waghtnet. Todos los derechos reservados.</h2>
+        </div>
+        <div class="redes">
+            <div class="logos">
+                <img src="../src/logos/logo github.png" alt="GitHub">
+                <img src="../src/logos/logo whatsapp.png" alt="WhatsApp">
+                <img src="../src/logos/logo instagram.png" alt="Instagram">
+            </div>
+            <div class="mapa">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.6282444920153!2d-58.46701818888922!3d-34.84043837275716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd6aaca975e65%3A0x7e7f33de3d236b75!2sG%C3%BCemes%202051%2C%20B1842%20Monte%20Grande%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1777413991594!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </div>
+
+        <div class="nav">
+            <a href="">Nosotros</a>
+            <a href="">Productos</a>
+            <a href="">Galeria</a>
+            <a href="">Contacto</a>
+        </div>
+    </footer>
+    <script src="../script/main.js"></script>
+    <script src="../script/carrito.js"></script>
+    <script src="../script/favorito.js"></script>
+</body>
+</html>

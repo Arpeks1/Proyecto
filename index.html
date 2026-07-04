@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warhammer 40k</title>
-    <link rel="shortcut icon" href="./src/logos/logo_40K.png" type="image/x-icon">
+    <title>Waghnet</title>
+    <link rel="shortcut icon" href="./src/logos/Logo 40K Blanco.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
     <header class="encabezado">
-        <img src="./src/logos/logo_40K.png" alt="logo">
+        <img src="./src/logos/Logo 40K Blanco.png" alt="logo">
         <nav class="menu">
-            <a href="" class="extra">Nosotros</a>
-            <a href="" class="extra">Productos</a>
+            <a href="./Pages/Nosotros.html" class="extra">Nosotros</a>
+            <a href="./Pages/Productos.html" class="extra">Productos</a>
             <a href="" class="extra">Galeria</a>
-            <a href="" class="contactos">Contactos</a>
+            <a href="./Pages/Contactos.html" class="contactos">Contactos</a>
             <div class="carrito-nav" id="carrito-nav">
                 <img src="./src/iconos/carrito.png" alt="carrito" class="icono-carrito-nav">
                 <span class="contador-carrito" id="contador-carrito">0</span>
@@ -50,7 +50,7 @@
         </nav>
     </header>
     <main class="principal">
-        <h2 class="Titulos">Nuestros productos destacados</h2>
+        <h2 class="Titulos D">Nuestros productos destacados</h2>
         <section class="Promociones">
             <div class="carousel">
                 <img src="./src/skull.jpeg" alt="">
@@ -76,71 +76,101 @@
                     machacar todo lo que ze ponga delante. ¡Porque lo único mejó que ganar una pelea ez encontrar otra
                     máz grande!»</p>
             </div>
-            <img src="./src/banners/banner main.jpeg" alt="" id="Banner">
+            <img src="./src/banners/banner main.jpeg" alt="Banner Orko" id="Banner">
         </section>
-        <h2 class="Titulos I">Mas de nosotros</h2>
-        <section class="Informacion">
-
-            <div class="destacados">
-
-                <div class="tarjetas">
-                    <button class="fav-btn"><img src="./src/iconos/corazon.png" alt="favorito"></button>
-                    <img src="./src/skull.jpeg" alt="" class="producto">
-                    <h3> Figura Coleccionable</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
-                        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
-                        facere vero consequuntur mollitia.</p>
-                    <div class="precios">
-                        
-                        <b>$25</b>
-                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito">
-                            <p>Comprar</p>
-                        </button>
-                    </div>
+        <div class="Clanes">
+                <div class="Clan">
+                    <img src="./src/logos/Goffs.jpeg" alt="Goffs Logo">
+                    <h2>Goffs</h2>
+                    <p>Son los orkos más grandes, brutales y feroces. Se centran completamente en el combate cuerpo a cuerpo y son conocidos por vestir de negro a cuadros y llevar símbolos de calaveras.</p>
+                    <button id="Redireccion"><a href="./Pages/Nosotros.html">Investigar</a></button>
                 </div>
-
-                <div class="tarjetas">
-                    <button class="fav-btn"><img src="./src/iconos/corazon.png" alt="favorito"></button>
-                    <img src="./src/skull.jpeg" alt="" class="producto">
-                    <h3> Figura Coleccionable</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
-                        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
-                        facere vero consequuntur mollitia.</p>
-                    <div class="precios">
-                        
-                        <b>$25</b>
-                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito">
-                            <p>Comprar</p>
-                        </button>
-                    </div>
+                <div class="Clan">
+                    <img src="./src/logos/Evil Sunz.jpeg" alt="Evil Sunz Logo">
+                    <h2>Evil Sunz</h2>
+                    <p>Adictos a la velocidad y la adrenalina. Son los mejores mecánicos y conductores, prefiriendo las motos de guerra y los vehículos pintados de rojo porque "van más rápido"</p>
+                    <button id="Redireccion"><a href="./Pages/Nosotros.html">Investigar</a></button>
                 </div>
-
-                <div class="tarjetas">
-                    <button class="fav-btn"><img src="./src/iconos/corazon.png" alt="favorito"></button>
-                    <img src="./src/skull.jpeg" alt="" class="producto">
-                    <h3> Figura Coleccionable</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
-                        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
-                        facere vero consequuntur mollitia.</p>
-                    <div class="precios">
-                        
-                        <b>$25</b>
-                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito">
-                            <p>Comprar</p>
-                        </button>
-                    </div>
+                <div class="Clan">
+                    <img src="./src/logos/Bad Moons.jpeg" alt="Bad Moons Logo">
+                    <h2>Bad Moons</h2>
+                    <p>Son los "ricos" de la sociedad orka. Gracias a que sus dientes crecen más rápido, controlan el comercio y pueden comprar el mejor armamento y equipo brillante, destacando con el color amarillo.</p>
+                    <button id="Redireccion"><a href="./Pages/Nosotros.html">Investigar</a></button>
+                </div>
+                <div class="Clan">
+                    <img src="./src/logos/DeathSkulls.jpeg" alt="DeathSkulls Logo">
+                    <h2>DeathSkulls</h2>
+                    <p>Son conocidos por su mala suerte, su obsesión por el saqueo y por robar todo lo que ven. Su armadura suele estar pintada de azul, un color que ellos consideran que da buena suerte.</p>
+                    <button id="Redireccion"><a href="./Pages/Nosotros.html">Investigar</a></button>
+                </div>
+                <div class="Clan">
+                    <img src="./src/logos/Blood Axes.jpeg" alt="Blood Axes Logo">
+                    <h2>Blood Axes</h2>
+                    <p>Son el clan más astuto y pragmático. A diferencia de los demás, no tienen reparos en usar tácticas como el camuflaje, o incluso aliarse o contratar mercenarios de otras razas.</p>
+                    <button id="Redireccion"><a href="./Pages/Nosotros.html">Investigar</a></button>
+                </div>
+                <div class="Clan">
+                    <img src="./src/logos/Snake Bites.jpeg" alt="SnakesBites Logo">
+                    <h2>SnakesBites</h2>
+                    <p>Son los tradicionalistas. Rechazan la tecnología y los artefactos brillantes, prefiriendo confiar en la brutalidad natural, los garrotes y luchar montados en monstruosos Garrapatos (Squigs).</p>
+                    <button id="Redireccion"><a href="./Pages/Nosotros.html">Investigar</a></button>
                 </div>
             </div>
-            <div class="paginas">
-
+        <h2 class="Titulos I">Mas de nosotros</h2>
+        <section class="Informacion">
+            <div class="destacados">
+                <div class="tarjetas">
+                    <button class="fav-btn"><img src="./src/iconos/corazon.png" alt="favorito"></button>
+                    <img src="./src/skull.jpeg" alt="" class="producto">
+                    <h3> Figura Coleccionable</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
+                        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
+                        facere vero consequuntur mollitia.</p>
+                    <div class="precios">
+                        
+                        <b>$25</b>
+                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito">
+                            <p>Comprar</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <button class="fav-btn"><img src="./src/iconos/corazon.png" alt="favorito"></button>
+                    <img src="./src/skull.jpeg" alt="" class="producto">
+                    <h3> Figura Coleccionable</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
+                        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
+                        facere vero consequuntur mollitia.</p>
+                    <div class="precios">
+                        
+                        <b>$25</b>
+                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito">
+                            <p>Comprar</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="tarjetas">
+                    <button class="fav-btn"><img src="./src/iconos/corazon.png" alt="favorito"></button>
+                    <img src="./src/skull.jpeg" alt="" class="producto">
+                    <h3> Figura Coleccionable</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
+                        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
+                        facere vero consequuntur mollitia.</p>
+                    <div class="precios">
+                        <b>$25</b>
+                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito">
+                            <p>Comprar</p>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
     <footer class="pie">
         <div class="info">
-            <img src="./src/logos/logo_40K.png" Logo">
+            <img src="./src/logos/Logo 40K Blanco.png" alt="Logo">
+            <h2>© 2026 Waghtnet. Todos los derechos reservados.</h2>
         </div>
-
         <div class="redes">
             <div class="logos">
                 <img src="./src/logos/logo github.png" alt="GitHub">
@@ -167,7 +197,6 @@
     <script src="./script/carrito.js"></script>
     <script src="./script/main.js"></script>
     <script src="./script/favorito.js"></script>
-
 </body>
 
 </html>

@@ -3,22 +3,18 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    margin: 0;
-    padding: 0;
-}
 /* header */
+
 .encabezado{
-    min-height: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #698D35;
-    /* background-image: url(../src/banners/);
+    background-image: url(../src/banners/Banner\ Header\ \(3\).png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    width: 100vw; */
+    background-size:100% auto;  
 }
 .encabezado img{
     border-radius: 15px;
@@ -29,7 +25,7 @@ body{
 }
 .encabezado img:hover{
     transform: scale(0.9);
-    filter: drop-shadow(2px 2px 6px whitesmoke);
+    filter: drop-shadow(2px 2px 6px #A7DF59);
 }
 .menu{
     display: flex;
@@ -39,43 +35,47 @@ body{
     margin: auto 10px;
     text-decoration: none;
     color: whitesmoke;
-    background: rgb(85, 85, 85);
-    padding: 8px;
+    background: #555555;
+    padding: 8px 12px;
     border-radius: 15px;
     font-size: 20px;
-    border: 1px solid black;
+    filter: drop-shadow(1px 1px 3px black);
     transition: 0.1s ease-in-out;
 }
 .extra:hover{
-    filter: drop-shadow(2px 2px 6px black);
-    transform: translate(-25px -50px);
+    transform: scale(1.1);
+    background:#3c521f;
+    filter: drop-shadow(2px 2px 3px white);
 }
 .contactos{
     margin: auto 10px;
     text-decoration: none;
     color: rgb(30, 30, 30);
-    padding: 5px;
+    padding: 8px 12px;
     background: gainsboro;
     border-radius: 15px;
     transition: 0.3s ease-in-out;
     font-size: 20px;
+    filter: drop-shadow(1px 1px 6px black);
 }
 .contactos:hover{
-    transform: scale(0.9) ;
-    filter: drop-shadow(3px 3px 6px crimson);
+    transform: scale(0.9);
+    filter: drop-shadow(6px 6px 8px black);
 }
 /* main */
 .principal{
     background: #EFF1ED;
+    padding: 25px 0;
 }
 .Promociones{
     overflow: hidden;
     width: 85%;
     border-radius: 10px;
-    background: #A7DF59;
+    background: #6c9237;
     padding: 20px 0px;
     box-shadow: 2px 2px 4px black;
-    margin: 25px auto;
+    justify-self: center;
+    margin-bottom: 35px;
 }
 .carousel{
     display: grid;
@@ -112,32 +112,18 @@ body{
     font-style: italic;
     border-bottom: 10px solid rgb(121, 187, 23);
     border-radius: 15px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-/* #TituloP:hover{
-    animation: colores 2s infinite ease-in-out alternate;
+.D{
+    margin-bottom: 30px;
 }
-@keyframes colores {
-    25%{
-        color: #315005;
-    }
-    50%{
-        color: #487707;
-    }
-    75%{
-        color: #62a10a;
-    }
-    100%{
-        color: #7ac90c;
-    }
-} */
 .banner{
     display: flex;
     background: black;
-    margin: auto 25px;
+    margin:25px;
     border-radius: 15px;
     filter: drop-shadow( 0px 2px 6px rgb(85, 84, 84));
-    margin-top: 25px;
-    margin-bottom: 25px;
+
 }
 .banner div{
     display: flex;
@@ -151,7 +137,7 @@ body{
     margin: 10px auto;
 }
 .banner h2{
-    color: rgb(202, 199, 199);
+    color: #cac7c7;
     font-size: 40px;
     margin: 10px auto;
     padding-bottom: 5px;
@@ -175,11 +161,13 @@ body{
 }
 .B{
     justify-self: left;
-    padding-left: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .I{
-    justify-self: right;
-    padding-right: 25px;
+    justify-self: left;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 .Informacion{
     padding: 25px;
@@ -236,6 +224,7 @@ body{
     padding: 5px;
     border-radius: 15px;
     background-color: snow;
+    cursor: pointer;
     transition: 0.1s ease-in-out;
 }
 .precios button:active{
@@ -252,11 +241,79 @@ body{
     width: 20px;
     height: 20px;
 }
+.Clanes{
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.Clan{
+    margin: 30px auto;
+    min-width: 200px;
+    min-height: 450px;
+    max-width: 400px;
+    max-height: 750px;
+    background:#7e7e7e;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5%;
+    justify-content: space-around;
+    filter: drop-shadow(3px 3px 6px #3f3f3f);
+    transition: 0.2s ease-in-out;
+}
+.Clan img{
+    width: 250px;
+    height: 250px;
+    border-radius: 40%;
+    filter: drop-shadow(2px 2px 6px black);
+}
+.Clan h2{
+    font-size: 35px;
+    text-shadow: 1px 1px 6px #555555;
+}
+.Clan p{
+    font-weight: 600;
+    text-align: center;
+    padding: 5px;
+}
+.Clan button{
+    margin-left: 25px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: #f7f7f7;
+    border: none;
+    filter: drop-shadow(2px 2px 3px black);
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+}
+.Clan a{
+    text-decoration: none;
+    color: inherit;
+}
+.Clan:hover{
+    transform: scale(0.95);
+    filter: drop-shadow(4px 4px 8px #304d08);
+    background: #4a7a07;
+}
+.Clan button:hover{
+    font-size: 15px;
+    font-weight: 700;
+    filter: drop-shadow(4px 4px 6px #444444);
+    background: #cccccc;
+}
 /* footer */
 .pie{
     background: #698D35;
     display: flex;
     justify-content: space-evenly;
+    background-image: url(../src/banners/Banner\ Header\ \(3\).png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;  
+    border: #555555 6px solid;
 }
 .info{
     display: flex;
@@ -264,13 +321,19 @@ body{
     flex-wrap: wrap;
 }
 .info img{
-    height: 250px;
+    height: 200px;
     width: 200px;
-    transition: 0.4s ease-in-out;
+    transition: 0.3s ease-in-out;
+    align-self: center;
 }
 .info img:hover{
-    transform: scale(0.9) rotate(2deg);
-    filter: drop-shadow(3px 3px 6px #962f33);
+    transform: scale(0.9) rotate(1deg);
+    filter: drop-shadow(1px 1px 4px white);
+}
+.info h2{
+    margin-top: 30px;
+    color: whitesmoke;
+    font-size: 25px;
 }
 .redes img{
     margin-top: 10px;
@@ -280,7 +343,7 @@ body{
 }
 .redes img:hover{
     transform: scale(0.9);
-    filter: drop-shadow(2px 2px 8px white);
+    filter: drop-shadow(2px 2px 8px #A7DF59);
 }
 .logos{
     display: flex;
@@ -290,12 +353,12 @@ body{
     height: 200px;
     width: 400px;
     border-radius: 20px;
-    box-shadow: 3px 3px 5px #f5e15e;
+    box-shadow: 4px 4px 8px #64a010;
     transition: 0.5s;
     margin-top: 10px;
 }
 .mapa iframe:hover{
-    transform: scale(0.9);
+    transform: scale(0.85);
 }
 .nav{
     display: flex;
@@ -315,8 +378,11 @@ body{
 .nav a:hover{
     transform: scale(0.9);
     border-bottom: 5px solid;
-    border-image: linear-gradient(to right, #c86d14, #962f33)1;
+border-image: linear-gradient(to right, #698D35, #9cd350)1;
 }
+
+
+/* Adiciones de Lisandro */
 
 .carrito-nav{
     position: relative;
