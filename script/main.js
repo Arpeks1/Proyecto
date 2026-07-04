@@ -51,7 +51,6 @@ const FiltroPinturas = document.getElementById("pinturas")
 const FiltroMiniatura = document.getElementById("miniatura")
 const FiltroExtra = document.getElementById("extra")
 const FiltroRopa = document.getElementById("ropa")
-const FiltroPinturas = document.getElementById("pinturas")
 const FiltroLibro = document.getElementById("libro")
 
 
