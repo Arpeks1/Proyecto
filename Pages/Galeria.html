@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <button id="boton-orkonatra">
+    <img src="../src/iconos/orkonatra.png" alt="ORKONATRA">
+</button>
+
+<audio id="orkAudio">
+    <source src="../src/audios/40K Ork - What A Wonderful WAAAGH!.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const botonOrk=document.getElementById("boton-orkonatra");
+const audioOrk=document.getElementById("orkAudio");
+
+let sonando=false;
+
+botonOrk.addEventListener("click",()=>{
+
+    if(!sonando){
+
+        audioOrk.play();
+        sonando=true;
+
+    }else{
+
+        audioOrk.pause();
+        audioOrk.currentTime=0;
+        sonando=false;
+
+    }
+
+});
+
+audioOrk.addEventListener("ended",()=>{
+
+    sonando=false;
+
+});
+
+</script>
+</body>
+</html>
