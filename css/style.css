@@ -71,7 +71,7 @@
     overflow: hidden;
     width: 85%;
     border-radius: 10px;
-    background: #87b644;
+    background: #6c9237;
     padding: 20px 0px;
     box-shadow: 2px 2px 4px black;
     justify-self: center;
@@ -112,32 +112,18 @@
     font-style: italic;
     border-bottom: 10px solid rgb(121, 187, 23);
     border-radius: 15px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-/* #TituloP:hover{
-    animation: colores 2s infinite ease-in-out alternate;
+.D{
+    margin-bottom: 30px;
 }
-@keyframes colores {
-    25%{
-        color: #315005;
-    }
-    50%{
-        color: #487707;
-    }
-    75%{
-        color: #62a10a;
-    }
-    100%{
-        color: #7ac90c;
-    }
-} */
 .banner{
     display: flex;
     background: black;
-    margin: auto 25px;
+    margin:25px;
     border-radius: 15px;
     filter: drop-shadow( 0px 2px 6px rgb(85, 84, 84));
-    margin-top: 25px;
-    margin-bottom: 25px;
+
 }
 .banner div{
     display: flex;
@@ -151,7 +137,7 @@
     margin: 10px auto;
 }
 .banner h2{
-    color: rgb(202, 199, 199);
+    color: #cac7c7;
     font-size: 40px;
     margin: 10px auto;
     padding-bottom: 5px;
@@ -175,11 +161,13 @@
 }
 .B{
     justify-self: left;
-    padding-left: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .I{
-    justify-self: right;
-    padding-right: 25px;
+    justify-self: left;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 .Informacion{
     padding: 25px;
@@ -267,13 +255,13 @@
     min-height: 450px;
     max-width: 400px;
     max-height: 750px;
-    background:#c7c7c7;
+    background:#7e7e7e;
     display: flex;
     align-items: center;
     flex-direction: column;
     border-radius: 5%;
     justify-content: space-around;
-    filter: drop-shadow(3px 3px 6px #7e7e7e);
+    filter: drop-shadow(3px 3px 6px #3f3f3f);
     transition: 0.2s ease-in-out;
 }
 .Clan img{
@@ -293,7 +281,7 @@
 }
 .Clan button{
     margin-left: 25px;
-    padding: 7px 12px;
+    padding: 10px 15px;
     border-radius: 15px;
     background-color: #f7f7f7;
     border: none;
@@ -302,12 +290,11 @@
     cursor: pointer;
 }
 .Clan:hover{
-    transform: scale(0.9);
+    transform: scale(0.95);
     filter: drop-shadow(4px 4px 8px #304d08);
-    background: #62a10a;
+    background: #4a7a07;
 }
 .Clan button:hover{
-    transform: scale(1.05);
     font-size: 15px;
     font-weight: 700;
     filter: drop-shadow(4px 4px 6px #444444);
