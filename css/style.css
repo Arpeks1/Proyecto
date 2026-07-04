@@ -3,10 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    margin: 0;
-    padding: 0;
-}
 /* header */
 
 .encabezado{
@@ -75,7 +71,7 @@ body{
     overflow: hidden;
     width: 85%;
     border-radius: 10px;
-    background: #A7DF59;
+    background: #87b644;
     padding: 20px 0px;
     box-shadow: 2px 2px 4px black;
     justify-self: center;
@@ -397,5 +393,5 @@ body{
 .nav a:hover{
     transform: scale(0.9);
     border-bottom: 5px solid;
-    border-image: linear-gradient(to right, #c86d14, #962f33)1;
+    border-image: linear-gradient(to right, #698D35, #9cd350)1;
 }
