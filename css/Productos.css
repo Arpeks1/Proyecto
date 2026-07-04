@@ -257,7 +257,84 @@
 .principal{
     background: #EFF1ED;
     padding: 25px 0;
+    display: flex;
+    justify-content: space-evenly;
 }
+.contenedor{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.Tarjetas{
+    min-width: 300px;
+    min-height: 500px;
+    max-width: 500px;
+    background: #2c410b;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    filter: drop-shadow(2px 5px 6px #101804);
+    border: 2px solid #203008;
+    transition: 0.2s ease-in-out;
+}
+.Tarjetas:hover{
+    transform: scale(1.01);
+    filter: drop-shadow(0px 10px 12px #101804);
+}
+.Tarjetas h1{
+    color: #5a5a5a;
+    font-size: 50px;
+    text-shadow: 1px 1px 2px #dddddd;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.Tarjetas h2{
+    color: #d4050c;
+    text-shadow: 1px 1px 2px #720306;
+    font-size: 35px;
+}
+.Tarjetas h3{
+    font-size: 30px;
+    color: #acacac;
+}
+.Tarjetas p{
+    font-size: 18px;
+    font-weight: 600;
+    color: #acacac;
+    padding: 10px 20px;
+}
+.Tarjetas img{
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    filter: drop-shadow(2px 2px 6px gray);
+    margin: auto 10px;
+}
+.Tarjetas span{
+    margin-top: 15px;
+    font-size: 50px;
+    font-weight: 600;
+    color: #3f0103;
+    text-shadow: 1px 1px 2px #1f0102;
+}
+.Tarjetas button{
+    padding: 7.5px 15px;
+    border-radius: 15px;
+    border: none;
+    background: #8cca36;
+    filter: drop-shadow(2px 2px 6px #47661b);
+    margin: 30px 0px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.2s ease-in-out;
+}
+.Tarjetas button:hover{
+    transform: scale(0.95);
+    background: #7db430;
+}
+.Tarjetas
 /* footer */
 .pie{
     background: #698D35;

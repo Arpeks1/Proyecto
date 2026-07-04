@@ -16,7 +16,7 @@ function TraerDatos(Datos) {
             <h3>Cantidad: ${i.Stock}</h3>
             <p>${i.Descripcion}</p>
             <img src="${i.Imagen}" alt="img">
-             ${i.Stock<17 ? '<span style=color:red>Stock Bajo</span>' : ""}
+             ${i.Stock<17 ? '<span>Stock Bajo</span>' : ""}
             <button class="btn btn-primary" onclick="cargarcarrito()"> agrega al carrito </button>
 
         `
