@@ -48,7 +48,7 @@ Filtro.addEventListener('keyup', function () {
         TraerDatos(Filtros)
     }
     else {
-        Contenedor.innerHTML = `<p>Producto no Encontrado</p>`
+        Contenedor.innerHTML = `<p id="Falta">Producto no Encontrado</p>`
     }
 
 })

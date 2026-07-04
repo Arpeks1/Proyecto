@@ -71,7 +71,7 @@
     overflow: hidden;
     width: 85%;
     border-radius: 10px;
-    background: #6c9237;
+    background: #4e6928;
     padding: 20px 0px;
     box-shadow: 2px 2px 4px black;
     justify-self: center;
@@ -183,7 +183,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #f3f5f2;
+    background-color: #f8f8f8;
     max-width: 500px;
     max-height: 750px;
     border-radius: 15px;
@@ -203,9 +203,11 @@
 .tarjetas h3{
     font-size: 30px;
     margin-bottom: 5px;
+    text-shadow: 1px 1px 2px black;
 }
 .tarjetas p{
     text-align: center;
+    font-weight: 600;
 }
 .precios{
     display: flex;
@@ -214,8 +216,8 @@
     align-items: center;
 }
 .precios b{
-    color:#62a10a;
-    font-weight: 500;
+    color:#4b7a07;
+    font-weight: 600;
     font-size: 25px;
 }
 .precios button,
@@ -224,7 +226,8 @@
     margin-left: 25px;
     padding: 5px;
     border-radius: 15px;
-    background-color: snow;
+    background-color: #8b8b8b;
+    filter: drop-shadow(0px 5px 6px #636363);
     cursor: pointer;
     transition: 0.1s ease-in-out;
     text-decoration: none;

@@ -269,6 +269,7 @@
 .principal{
     background: #EFF1ED;
     padding: 25px 0;
+    padding-bottom: 99px;
 }
 .contenedor{
     display: flex;
@@ -358,28 +359,34 @@
     margin: 0;
     border-radius: 0;
 }
+.Tarjetas .btn-comprar p{
+    color: black;
+}
 /* filtros */
 .Filtros{
     display: flex;
-    justify-content: center;
     padding: 15px;
+    flex-direction: column;
 }
 .Checklist{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 10px;
+    position: sticky;
+    z-index: 10;
+    top: 25px;
 }
 .Checklist label{
     display: flex;
     align-items: center;
     gap: 5px;
     background: whitesmoke;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-radius: 15px;
     box-shadow: 1px 1px 4px gray;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 18px;
 }
 .Checklist button{
     background: #962f33;
@@ -389,14 +396,13 @@
     border-radius: 15px;
     box-shadow: 1px 1px 4px gray;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 16px;
     transition: 0.1s ease-in-out;
 }
 .Checklist button:hover{
     background: #7a2529;
     transform: scale(1.05);
 }
-
 /* buscador */
 .Filtro-Barra{
     display: flex;
@@ -409,9 +415,14 @@
     padding: 10px 15px;
     border-radius: 15px;
     border: 1px solid gainsboro;
+    filter: drop-shadow(0px 5px 6px #b9b9b9);
     font-size: 16px;
 }
-
+#Falta{
+    margin-top: 150px;
+    font-size: 50px;
+    font-weight: 600;
+}
 /* footer */
 .pie{
     background: #698D35;
