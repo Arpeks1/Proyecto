@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waghnet</title>
     <link rel="shortcut icon" href="./src/logos/Logo 40K Blanco.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
     <header class="encabezado">
         <img src="./src/logos/Logo 40K Blanco.png" alt="logo">
@@ -15,10 +18,39 @@
             <a href="" class="extra">Productos</a>
             <a href="" class="extra">Galeria</a>
             <a href="./Pages/Contactos.html" class="contactos">Contactos</a>
+            <div class="carrito-nav" id="carrito-nav">
+                <img src="./src/iconos/carrito.png" alt="carrito" class="icono-carrito-nav">
+                <span class="contador-carrito" id="contador-carrito">0</span>
+
+                <div class="panel-carrito" id="panel-carrito">
+                    <div class="panel-carrito-header">
+                        <h4>Tu carrito</h4>
+                        <button id="vaciar-carrito" class="vaciar-carrito">Vaciar carrito</button>
+                    </div>
+                    <div class="lista-carrito" id="lista-carrito">
+                        <p class="carrito-vacio">Tu carrito está vacío</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="favoritos-nav" id="favoritos-nav">
+                <img src="./src/iconos/corazon.png" alt="favoritos" class="icono-favoritos-nav">
+                <span class="contador-favoritos" id="contador-favoritos">0</span>
+
+                <div class="panel-favoritos" id="panel-favoritos">
+                    <div class="panel-carrito-header">
+                        <h4>Tus favoritos</h4>
+                        <button id="vaciar-favoritos" class="vaciar-carrito">Vaciar favoritos</button>
+                    </div>
+                    <div class="lista-favoritos" id="lista-favoritos">
+                        <p class="carrito-vacio">No tenés favoritos guardados</p>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
     <main class="principal">
-        <h2 id="TituloP">Nuestros productos destacados</h2>
+        <h2 class="Titulos">Nuestros productos destacados</h2>
         <section class="Promociones">
             <div class="carousel">
                 <img src="./src/skull.jpeg" alt="">
@@ -34,43 +66,63 @@
                 <img src="./src/skull.jpeg" alt="" aria-hidden="true">
             </div>
         </section>
-        <h2 id="TituloN">Acerca de nosotros</h2>
+        <h2 class="Titulos B">Nozotroz</h2>
         <section class="banner">
             <div>
-            <img src="./src/logos/Logo main.png" alt="Logo Orko">
-            <h2>Nozotroz</h2>
-            <p>«¡WAAAGH! ¡A por elloz, chicoz! No hay nada mejó que una buena pelea. <br> Cuanto máz grande ez la batalla, máz noz divertimoz. Con nueztraz armaz, nueztroz karroz y mucho ruido. <br> Vamoz a machacar todo lo que ze ponga delante. ¡Porque lo único mejó que ganar una pelea ez encontrar otra máz grande!»</p>
+                <img src="./src/logos/Logo main.png" alt="">
+                <h2>Nozotroz</h2>
+                <p>«¡WAAAGH! ¡A por elloz, chicoz! No hay nada mejó que una buena pelea. <br> Cuanto máz grande ez la
+                    batalla, máz noz divertimoz. Con nueztraz armaz, nueztroz karroz y mucho ruido. <br> Vamoz a
+                    machacar todo lo que ze ponga delante. ¡Porque lo único mejó que ganar una pelea ez encontrar otra
+                    máz grande!»</p>
             </div>
             <img src="./src/banners/banner main.jpeg" alt="Banner Orko" id="Banner">
         </section>
-        <h2 id="TituloI">Promociones e informacion nuestra</h2>
+        <h2 class="Titulos I">Mas de nosotros</h2>
         <section class="Informacion">
             <div class="destacados">
                 <div class="tarjetas">
+                    <button class="fav-btn"><img src="./src/iconos/corazon.png" alt="favorito"></button>
                     <img src="./src/skull.jpeg" alt="" class="producto">
                     <h3> Figura Coleccionable</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est facere vero consequuntur mollitia.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
+                        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
+                        facere vero consequuntur mollitia.</p>
                     <div class="precios">
+                        
                         <b>$25</b>
-                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito"><p>Comprar</p></button>
+                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito">
+                            <p>Comprar</p>
+                        </button>
                     </div>
                 </div>
                 <div class="tarjetas">
+                    <button class="fav-btn"><img src="./src/iconos/corazon.png" alt="favorito"></button>
                     <img src="./src/skull.jpeg" alt="" class="producto">
                     <h3> Figura Coleccionable</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est facere vero consequuntur mollitia.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
+                        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
+                        facere vero consequuntur mollitia.</p>
                     <div class="precios">
+                        
                         <b>$25</b>
-                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito"><p>Comprar</p></button>
+                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito">
+                            <p>Comprar</p>
+                        </button>
                     </div>
                 </div>
                 <div class="tarjetas">
+                    <button class="fav-btn"><img src="./src/iconos/corazon.png" alt="favorito"></button>
                     <img src="./src/skull.jpeg" alt="" class="producto">
                     <h3> Figura Coleccionable</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est facere vero consequuntur mollitia.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa accusantium aspernatur
+                        delectus laudantium nisi dolorem harum quam, neque, nostrum magnam quisquam aut at assumenda est
+                        facere vero consequuntur mollitia.</p>
                     <div class="precios">
                         <b>$25</b>
-                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito"><p>Comprar</p></button>
+                        <button> <img src="./src/iconos/carrito.png" alt="" class="carrito">
+                            <p>Comprar</p>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -127,7 +179,10 @@
                 <img src="./src/logos/logo instagram.png" alt="Instagram">
             </div>
             <div class="mapa">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.6282444920153!2d-58.46701818888922!3d-34.84043837275716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd6aaca975e65%3A0x7e7f33de3d236b75!2sG%C3%BCemes%202051%2C%20B1842%20Monte%20Grande%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1777413991594!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.6282444920153!2d-58.46701818888922!3d-34.84043837275716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd6aaca975e65%3A0x7e7f33de3d236b75!2sG%C3%BCemes%202051%2C%20B1842%20Monte%20Grande%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1777413991594!5m2!1ses-419!2sar"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
 
             </div>
         </div>
@@ -139,5 +194,11 @@
             <a href="">Contacto</a>
         </div>
     </footer>
+
+    <script src="./script/carrito.js"></script>
+    <script src="./script/main.js"></script>
+    <script src="./script/favorito.js"></script>
+
 </body>
+
 </html>

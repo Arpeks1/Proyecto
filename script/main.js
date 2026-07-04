@@ -16,8 +16,7 @@ function TraerDatos(Datos) {
             <h3>Cantidad: ${i.Stock}</h3>
             <p>${i.Descripcion}</p>
             <img src="${i.Imagen}" alt="img">
-            <button onclick="agregarfavorito()" class="btnfav">❤️</button>
-            ${i.Stock<3 ? '<span style=color:red>Stock Bajo</span>' : ""}
+             ${i.Stock<17 ? '<span style=color:red>Stock Bajo</span>' : ""}
             <button class="btn btn-primary" onclick="cargarcarrito()"> agrega al carrito </button>
 
         `
@@ -48,9 +47,14 @@ Filtro.addEventListener('keyup', function () {
 
 // ----> filtros
 const borrarfiltros = document.getElementById("todo")
-const FiltroBuzo = document.getElementById("buzo")
-const FiltroRemera = document.getElementById("remera")
-const FiltroCampera = document.getElementById("campera")
+const FiltroPinturas = document.getElementById("pinturas")
+const FiltroMiniatura = document.getElementById("miniatura")
+const FiltroExtra = document.getElementById("extra")
+const FiltroRopa = document.getElementById("ropa")
+const FiltroPinturas = document.getElementById("pinturas")
+const FiltroLibro = document.getElementById("libro")
+
+
 
 // ----> filtrar
 const FiltrarDatos = (parametro) => {
@@ -70,22 +74,27 @@ borrarfiltros.addEventListener("click", () => {
 
 })
 
-FiltroBuzo.addEventListener("click", () => {
-    FiltrarDatos("buzo")
+FiltroPinturas.addEventListener("click", () => {
+    FiltrarDatos("pinturas")
 })
 
-FiltroCampera.addEventListener("click", () => {
-    FiltrarDatos("campera")
+FiltroMiniatura.addEventListener("click", () => {
+    FiltrarDatos("miniatura")
 })
 
-FiltroRemera.addEventListener("click", () => {
-    FiltrarDatos("remera")
+FiltroFigura.addEventListener("click", () => {
+    FiltrarDatos("figura")
 })
 
-window.cargarcarrito = function() {
-    Swal.fire({
-        title: "Agregado al Carrito Nene",
-        icon: "success",
-        draggable: true
-    });
-}
+FiltroExtra.addEventListener("click", () => {
+    FiltrarDatos("extra")
+})
+
+FiltroLibro.addEventListener("click", () => {
+    FiltrarDatos("libro")
+})
+
+FiltroRopa.addEventListener("click", () => {
+    FiltrarDatos("ropa")
+})
+
