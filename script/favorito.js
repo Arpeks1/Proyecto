@@ -22,7 +22,7 @@ function renderizarFavoritos() {
             <img src="${producto.imagen}" alt="${producto.nombre}">
             <div class="info-item">
                 <p>${producto.nombre}</p>
-                <b>${producto.precio}</b>
+                <b>$${producto.precio}</b>
             </div>
             <button class="eliminar-item" data-index="${index}">✕</button>
         </div>
@@ -47,67 +47,93 @@ function vaciarFavoritos() {
     renderizarFavoritos();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const botonesFav = document.querySelectorAll('.fav-btn');
-    botonesFav.forEach(boton => {
-        boton.addEventListener('click', () => {
-            const tarjeta = boton.closest('.tarjetas');
-            const producto = {
-                nombre: tarjeta.querySelector('h3').textContent.trim(),
-                precio: tarjeta.querySelector('.precios b').textContent.trim(),
-                imagen: tarjeta.querySelector('.producto').getAttribute('src')
-            };
+// saca nombre/precio/imagen/id de la tarjeta de producto (generada por main.js)
+function extraerProductoDeTarjeta(tarjeta) {
+    return {
+        id: tarjeta.dataset.id,
+        nombre: tarjeta.querySelector('h1').textContent.trim(),
+        precio: tarjeta.querySelector('h2').textContent.replace('$', '').trim(),
+        imagen: tarjeta.querySelector('img.producto').getAttribute('src')
+    };
+}
 
-            const yaEsFavorito = boton.classList.contains('activo');
-            if (yaEsFavorito) {
-                const index = favoritos.findIndex(p => p.nombre === producto.nombre);
-                if (index !== -1) eliminarDeFavoritos(index);
-                boton.classList.remove('activo');
-            } else {
-                agregarAFavoritos(producto);
-                boton.classList.add('activo');
-            }
-        });
+// vuelve a marcar en pantalla (corazon a color) los productos que ya son
+// favoritos. Se llama despues de cada TraerDatos en main.js, porque el
+// filtro/busqueda regenera las tarjetas desde cero y pierden la clase 'activo'
+window.marcarFavoritosEnPantalla = function () {
+    document.querySelectorAll('.fav-btn').forEach(boton => {
+        const tarjeta = boton.closest('.Tarjetas');
+        if (!tarjeta) return;
+        const esFavorito = favoritos.some(p => p.id === tarjeta.dataset.id);
+        boton.classList.toggle('activo', esFavorito);
     });
+};
 
+document.addEventListener('DOMContentLoaded', () => {
     const favoritosNav = document.getElementById('favoritos-nav');
     const panelFavoritos = document.getElementById('panel-favoritos');
-    favoritosNav.addEventListener('click', () => {
-        panelFavoritos.classList.toggle('activo');
-    });
+    const listaFavoritos = document.getElementById('lista-favoritos');
+    const vaciarBtn = document.getElementById('vaciar-favoritos');
 
-    document.getElementById('lista-favoritos').addEventListener('click', (e) => {
-        if (e.target.classList.contains('eliminar-item')) {
-            e.stopPropagation();
-            const index = Number(e.target.dataset.index);
-            eliminarDeFavoritos(index);
-
-            const nombreEliminado = e.target.closest('.item-carrito').querySelector('p').textContent.trim();
-            document.querySelectorAll('.tarjetas').forEach(tarjeta => {
-                const nombreTarjeta = tarjeta.querySelector('h3').textContent.trim();
-                if (nombreTarjeta === nombreEliminado) {
-                    const btn = tarjeta.querySelector('.fav-btn');
-                    btn.classList.remove('activo');
-                }
-            });
-        }
-    });
-
-    document.getElementById('vaciar-favoritos').addEventListener('click', (e) => {
-        e.stopPropagation();
-        vaciarFavoritos();
-        document.querySelectorAll('.fav-btn').forEach(btn => {
-            btn.classList.remove('activo');
+    // abrir/cerrar el panel al clickear el icono de favoritos
+    if (favoritosNav && panelFavoritos) {
+        favoritosNav.addEventListener('click', () => {
+            panelFavoritos.classList.toggle('activo');
         });
-    });
 
-    panelFavoritos.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
+        // que el click DENTRO del panel no lo cierre
+        panelFavoritos.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
 
+        // cerrar el panel si se clickea afuera
+        document.addEventListener('click', (e) => {
+            if (!favoritosNav.contains(e.target)) {
+                panelFavoritos.classList.remove('activo');
+            }
+        });
+    }
+
+    // eliminar un favorito individual (delegacion de eventos)
+    if (listaFavoritos) {
+        listaFavoritos.addEventListener('click', (e) => {
+            if (e.target.classList.contains('eliminar-item')) {
+                e.stopPropagation();
+                const index = Number(e.target.dataset.index);
+                eliminarDeFavoritos(index);
+                window.marcarFavoritosEnPantalla();
+            }
+        });
+    }
+
+    // vaciar todos los favoritos
+    if (vaciarBtn) {
+        vaciarBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            vaciarFavoritos();
+            window.marcarFavoritosEnPantalla();
+        });
+    }
+
+    // click en el corazon de cualquier producto.
+    // Usa delegacion sobre document porque las tarjetas se regeneran
+    // enteras cada vez que se filtra o busca en Productos.html
     document.addEventListener('click', (e) => {
-        if (!favoritosNav.contains(e.target)) {
-            panelFavoritos.classList.remove('activo');
+        const boton = e.target.closest('.fav-btn');
+        if (!boton) return;
+
+        const tarjeta = boton.closest('.Tarjetas');
+        if (!tarjeta) return;
+
+        const producto = extraerProductoDeTarjeta(tarjeta);
+        const index = favoritos.findIndex(p => p.id === producto.id);
+
+        if (index !== -1) {
+            eliminarDeFavoritos(index);
+            boton.classList.remove('activo');
+        } else {
+            agregarAFavoritos(producto);
+            boton.classList.add('activo');
         }
     });
 });
