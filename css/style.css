@@ -176,6 +176,36 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+.comentario-destacado{
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px 10px;
+}
+.comentario-card{
+    background-color: #698D35;
+    color: whitesmoke;
+    border-radius: 15px;
+    padding: 20px 30px;
+    max-width: 500px;
+    text-align: center;
+    filter: drop-shadow(2px 2px 6px #35471b);
+    transition: opacity 0.3s ease-in-out;
+}
+.comentario-card.cambiando{
+    opacity: 0;
+}
+.comentario-card .comentario-texto{
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.comentario-card .comentario-autor{
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+}
+
 .tarjetas{
     position: relative;
     display: flex;
