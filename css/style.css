@@ -584,6 +584,41 @@ border-image: linear-gradient(to right, #698D35, #9cd350)1;
     display: flex;
 }
 
+#boton-modo-oscuro{
+    position: fixed;
+    bottom: 125px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: #1e1e1e;
+    color: whitesmoke;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 8px black;
+    z-index: 9999;
+    transition: .3s;
+}
+
+#boton-modo-oscuro:hover{
+    transform: scale(1.15);
+}
+
+html.modo-oscuro{
+    filter: invert(1) hue-rotate(180deg);
+    background: #fff;
+}
+
+html.modo-oscuro img,
+html.modo-oscuro video,
+html.modo-oscuro iframe{
+    filter: invert(1) hue-rotate(180deg);
+}
+
 /* ===========================
    BOTON ORKONATRA
 =========================== */
@@ -601,7 +636,6 @@ border-image: linear-gradient(to right, #698D35, #9cd350)1;
     background: transparent;
     z-index: 9999;
     transition: .3s;
-    animation: waagh 2s infinite;
 }
 
 #boton-orkonatra:hover{
@@ -613,20 +647,4 @@ border-image: linear-gradient(to right, #698D35, #9cd350)1;
     height:100%;
     object-fit:cover;
     border-radius:50%;
-}
-
-@keyframes waagh{
-
-    0%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
-
-    100%{
-        transform:translateY(0);
-    }
-
 }

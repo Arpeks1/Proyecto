@@ -157,6 +157,8 @@
         </div>
     </footer>
 
+    <button id="boton-modo-oscuro">🌙</button>
+
 <button id="boton-orkonatra">
     <img src="src/iconos/orkonatra.png" alt="ORKONATRA">
 </button>
@@ -171,6 +173,27 @@ const botonOrk=document.getElementById("boton-orkonatra");
 const audioOrk=document.getElementById("orkAudio");
 
 let sonando=false;
+
+const botonModo = document.getElementById("boton-modo-oscuro");
+
+if (localStorage.getItem("modoOscuro") === "activado") {
+    document.documentElement.classList.add("modo-oscuro");
+    botonModo.textContent = "☀️";
+}
+
+botonModo.addEventListener("click", () => {
+
+    document.documentElement.classList.toggle("modo-oscuro");
+
+    if (document.documentElement.classList.contains("modo-oscuro")) {
+        localStorage.setItem("modoOscuro", "activado");
+        botonModo.textContent = "☀️";
+    } else {
+        localStorage.setItem("modoOscuro", "desactivado");
+        botonModo.textContent = "🌙";
+    }
+
+});
 
 botonOrk.addEventListener("click",()=>{
 
@@ -196,6 +219,8 @@ audioOrk.addEventListener("ended",()=>{
 });
 
 </script>
+
+<script type="module" src="script/main.js"></script>
 
 </body>
 </html>
