@@ -3,15 +3,20 @@
     margin: 0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}    
 /* header */
 
 .encabezado{
-    height: 150px;
+    min-height:150px;
+    padding:15px 5%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background: #698D35;
-    background-image: url(../src/banners/Banner\ Header\ \(3\).png);
+    background-image: url(../src/banners/Banner\ Header.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:100% auto;  
@@ -19,8 +24,8 @@
 .encabezado img{
     border-radius: 15px;
     transition: 0.5s ease-in-out;
-    width: 135px;
-    height: 100px;
+    width:clamp(90px,10vw,135px);
+    height:auto;
     margin-right: 40px;
 }
 .encabezado img:hover{
@@ -28,8 +33,11 @@
     filter: drop-shadow(2px 2px 6px #A7DF59);
 }
 .menu{
-    display: flex;
-    justify-content: space-between;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
 }
 .extra{
     margin: auto 10px;
@@ -280,7 +288,8 @@
     position: relative;
     min-width: 300px;
     min-height: 500px;
-    max-width: 500px;
+    width:100%;
+    max-width:450px;
     background: #2c410b;
     margin: 20px;
     display: flex;
@@ -348,8 +357,7 @@
     transition: 0.2s ease-in-out;
 }
 .Tarjetas .btn-comprar:hover{
-    transform: scale(0.95);
-    background: #7db430;
+    transform: translateY(-8px) scale(1.02);
 }
 .Tarjetas .btn-comprar img{
     width: 24px;
@@ -471,7 +479,7 @@
     background: #698D35;
     display: flex;
     justify-content: space-evenly;
-    background-image: url(../src/banners/Banner\ Header\ \(3\).png);
+    background-image: url(../src/banners/Banner\ Footer.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;  
@@ -483,8 +491,9 @@
     flex-wrap: wrap;
 }
 .info img{
-    height: 200px;
-    width: 200px;
+    height: auto;
+    object-fit: cover;
+    width: 400px;
     transition: 0.3s ease-in-out;
     align-self: center;
 }
@@ -500,7 +509,8 @@
 .redes img{
     margin-top: 10px;
     width: 70px;
-    height: 70px;
+    height: auto;
+    object-fit: cover;
     transition: 0.5s ease-in-out;
 }
 .redes img:hover{

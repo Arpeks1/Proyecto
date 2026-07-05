@@ -3,14 +3,19 @@
     margin: 0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 /* header */
 .encabezado{
-    height: 150px;
+    min-height:150px;
+    padding:15px 5%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background: #698D35;
-    background-image: url(../src/banners/Banner\ Header\ \(3\).png);
+    background-image: url(../src/banners/Banner\ Header.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:100% auto;  
@@ -18,8 +23,8 @@
 .encabezado img{
     border-radius: 15px;
     transition: 0.5s ease-in-out;
-    width: 135px;
-    height: 100px;
+    width:clamp(90px,10vw,135px);
+    height:auto;
     margin-right: 40px;
 }
 .encabezado img:hover{
@@ -27,8 +32,11 @@
     filter: drop-shadow(2px 2px 6px #A7DF59);
 }
 .menu{
-    display: flex;
-    justify-content: space-between;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
 }
 .extra{
     margin: auto 10px;
@@ -64,66 +72,10 @@
 /* main */
 .principal{
     background: #EFF1ED;
-    padding: 45px 0;
+    padding: 53.5px 0;
 }
-/* .contenedor_formulario {
-    background-color: #698D35;
-    border-radius: 15px;
-    display: flex;
-    height: 500px;
-    width: 800px;
-    margin: 50px auto;
-    justify-content: center;
-    filter: drop-shadow(3px 3px 6px #35471b);
-    transition: 0.3s ease-in-out;
-}
-.contenedor_formulario:hover {
-    transform: scale(1.015);
-}
-.contenedor_formulario img {
-    width: 50%;
-    border-radius: 15px 0px 0px 15px;
-}
-.contenedor_formulario form {
-    width: 50%;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    gap: 20px;
-}
-.contenedor_formulario input,
-.contenedor_formulario textarea {
-    background-color: #bb032e;
-    border: transparent;
-    padding: 5px;
-    border-radius: 15px;
-    filter: drop-shadow(2px 2px 3px #500113);
-    font-weight: 600;
-}
-.contenedor_formulario label{
-    font-size: 25px;
-    font-weight: 600;
-    text-shadow: 1px 1px 2px black;
-}
-.contenedor_formulario button{
-    align-self: center;
-    padding: 7.5px 30px;
-    border-radius: 15px;
-    background: #555555;
-    border: none;
-    font-size: 15px;
-    font-weight: 600;
-    filter: drop-shadow(1px 1px 3px black);
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-}
-.contenedor_formulario button:hover{
-    transform: scale(0.9);
-    background: #5f5f5f;
-} */
-.Contenedor-Principal{
+
+.Formulario-total { 
     display: flex;
     justify-self: center;
     background: #ffffff;
@@ -133,21 +85,15 @@
     border-radius:12px;
     filter: drop-shadow(2px 3px 6px #a8a8a8);
     margin: 15px;
-    justify-content: space-around;
-}
-.Contenedor-Principal img{
-    width: 250px;
-    border-radius: 20px 0px 0px 20px;
-    filter: drop-shadow(1px 1px 4px #d1d1d1);
-}
-.Formulario-total { 
-    margin-left: 30px;
+    flex-direction: column  ;
 }
 .Registro-Inicio{
     display: flex;
     border-bottom: 2px solid #e0e0e0;
     margin-bottom: 25px;
+    flex-direction: row;
 }
+
 .Form-btn {
     flex: 1;
     padding: 12px;
@@ -164,7 +110,15 @@
 }
 .Formulario {
     display: none;
-    flex-direction: column;
+    flex-direction: row;
+}
+.Formulario img{
+    width: 250px;
+    border-radius: 20px 20px 20px 20px;
+    filter: drop-shadow(1px 1px 4px #d1d1d1);
+}
+.Formulario form{
+    margin-left: 100px;
 }
 .Formulario.activo{
     display: flex;
@@ -199,7 +153,7 @@
     color: #ffffff;
     border: none;
     filter: drop-shadow(2px 2px 4px #6b9136);
-    padding: 12px;
+    padding: 12px 18px;
     border-radius: 10px; 
     font-weight: 600;
     cursor: pointer;
@@ -216,7 +170,7 @@
     background: #698D35;
     display: flex;
     justify-content: space-evenly;
-    background-image: url(../src/banners/Banner\ Header\ \(3\).png);
+    background-image: url(../src/banners/Banner\ Footer.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;  
@@ -228,8 +182,9 @@
     flex-wrap: wrap;
 }
 .info img{
-    height: 200px;
-    width: 200px;
+    height: auto;
+    object-fit: cover;
+    width: 400px;
     transition: 0.3s ease-in-out;
     align-self: center;
 }
@@ -245,7 +200,8 @@
 .redes img{
     margin-top: 10px;
     width: 70px;
-    height: 70px;
+    height: auto;
+    object-fit: cover;
     transition: 0.5s ease-in-out;
 }
 .redes img:hover{

@@ -3,14 +3,35 @@
     margin: 0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
+/* Scroll progresivo */
+.Smooth{
+    animation: MostrarCosasSarpado 0.7s linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0; 
+}
+@keyframes MostrarCosasSarpado {
+        from {
+            opacity: 0;
+            scale: 0.5;
+        }
+        to {
+            opacity: 1;
+            scale: 1;
+        }
+    }    
 /* header */
 .encabezado{
-    height: 150px;
+    min-height:150px;
+    padding:15px 5%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background: #698D35;
-    background-image: url(../src/banners/Banner\ Header\ \(3\).png);
+    background-image: url(../src/banners/Banner\ Header.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:100% auto;  
@@ -18,8 +39,8 @@
 .encabezado img{
     border-radius: 15px;
     transition: 0.5s ease-in-out;
-    width: 135px;
-    height: 100px;
+    width:clamp(90px,10vw,135px);
+    height:auto;
     margin-right: 40px;
 }
 .encabezado img:hover{
@@ -27,8 +48,11 @@
     filter: drop-shadow(2px 2px 6px #A7DF59);
 }
 .menu{
-    display: flex;
-    justify-content: space-between;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
 }
 .extra{
     margin: auto 10px;
@@ -73,13 +97,15 @@
     background: #141414;
     filter: drop-shadow(2px 2px 6px black);
     width: 80%;
-    height: 700px;
+    height: 750px;
     border-radius: 15px;
     transition: 0.4s ease-in-out;
+    padding:40px;
+    gap:40px;
 }
 .Introduccion:hover{
     transform: scale(0.98);
-        filter: drop-shadow(4px 4px 12px black);
+    filter: drop-shadow(4px 4px 12px black);
 }
 .Izquierda{
     width: 35%;
@@ -104,7 +130,6 @@
     padding: 10px 0px;
     border-radius: 40%;
     filter: drop-shadow(1px 1px 3px white);
-    
 }
 .Izquierda ul{
     left: 20px;
@@ -147,8 +172,10 @@
     border-radius: 15px;
 }
 .Derecha p{
-    font-size: 30px;
+    font-size: 22px;
     padding: 20px;
+    max-width:700px;
+    line-height:1.8;
 }
 .Separacion{
     font-size: 60px;    
@@ -157,7 +184,8 @@
     padding-left: 15px;
     border-bottom: solid 12px#455e23;
     border-radius: 15px;
-    margin-right: 62%;
+    display:inline-block;
+    margin:60px auto 40px 10px;
     text-shadow: 1px 1px 3px #9e9e9e;
 }
 .C{
@@ -648,7 +676,7 @@
     background: #698D35;
     display: flex;
     justify-content: space-evenly;
-    background-image: url(../src/banners/Banner\ Header\ \(3\).png);
+    background-image: url(../src/banners/Banner\ Footer.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;  
@@ -660,8 +688,9 @@
     flex-wrap: wrap;
 }
 .info img{
-    height: 200px;
-    width: 200px;
+    height: auto;
+    object-fit: cover;
+    width: 400px;
     transition: 0.3s ease-in-out;
     align-self: center;
 }
@@ -677,7 +706,8 @@
 .redes img{
     margin-top: 10px;
     width: 70px;
-    height: 70px;
+    height: auto;
+    object-fit: cover;
     transition: 0.5s ease-in-out;
 }
 .redes img:hover{
@@ -783,4 +813,103 @@ html.modo-oscuro iframe{
     height:100%;
     object-fit:cover;
     border-radius:50%;
+}
+
+
+/* monitores estandar */
+@media (max-width:1400px){
+    .Introduccion{
+        width:92%;
+        height:auto;
+    }
+    .Derecha h2{
+        font-size:48px;
+    }
+    .Derecha p{
+        font-size:24px;
+    }
+}
+
+/* tablets */
+@media (max-width:992px){
+    .Introduccion{
+        flex-direction:column;
+        height:auto;
+        padding:30px;
+    }
+    .Izquierda{
+        width:100%;
+        height:auto;
+        position:static;
+        align-items:center;
+    }
+    .Izquierda img{
+        position:static;
+        width:70%;
+        height:auto;
+    }
+    .Izquierda ul{
+        position:static;
+        margin-top:30px;
+        justify-content:center;
+        gap:30px;
+        font-size:22px;
+    }
+    .Derecha{
+        width:100%;
+        margin-top:30px;
+    }
+    .Derecha h2{
+        font-size:42px;
+        text-align:center;
+    }
+    .Derecha p{
+        font-size:22px;
+        text-align:center;
+    }
+    .Dioses{
+    flex-direction:column;
+    align-items:center;
+    }
+    .Personajes{
+    flex-direction:column;
+}
+    .pie{
+    flex-direction:column;
+    align-items:center;
+    padding:30px;
+    }
+    .info, .redes, .nav{
+    margin:25px 0;
+    }
+}
+
+/* Celulares */
+@media (max-width:480px){
+
+    .Introduccion{
+        width:95%;
+        padding:20px;
+    }
+    .Izquierda img{
+        width:100%;
+    }
+    .Izquierda ul{
+        flex-direction:column;
+        align-items:center;
+        font-size:20px;
+    }
+    .Derecha h2{
+        font-size:34px;
+    }
+    .Derecha p{
+        font-size:18px;
+        padding:15px;
+    }
+    .Separacion{
+    margin:40px auto;
+    text-align:center;
+    display:block;
+    font-size:38px;
+    }
 }

@@ -3,14 +3,19 @@
     margin: 0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 /* header */
 .encabezado{
-    height: 150px;
+    min-height:150px;
+    padding:15px 5%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background: #698D35;
-    background-image: url(../src/banners/Banner\ Header\ \(3\).png);
+    background-image: url(../src/banners/Banner\ Header.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:100% auto;  
@@ -18,8 +23,8 @@
 .encabezado img{
     border-radius: 15px;
     transition: 0.5s ease-in-out;
-    width: 135px;
-    height: 100px;
+    width:clamp(90px,10vw,135px);
+    height:auto;
     margin-right: 40px;
 }
 .encabezado img:hover{
@@ -27,8 +32,11 @@
     filter: drop-shadow(2px 2px 6px #A7DF59);
 }
 .menu{
-    display: flex;
-    justify-content: space-between;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
 }
 .extra{
     margin: auto 10px;
@@ -161,7 +169,7 @@
     background: #698D35;
     display: flex;
     justify-content: space-evenly;
-    background-image: url(../src/banners/Banner\ Header\ \(3\).png);
+    background-image: url(../src/banners/Banner\ Footer.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;  
@@ -173,8 +181,9 @@
     flex-wrap: wrap;
 }
 .info img{
-    height: 200px;
-    width: 200px;
+    height: auto;
+    object-fit: cover;
+    width: 400px;
     transition: 0.3s ease-in-out;
     align-self: center;
 }
@@ -190,7 +199,8 @@
 .redes img{
     margin-top: 10px;
     width: 70px;
-    height: 70px;
+    height: auto;
+    object-fit: cover;
     transition: 0.5s ease-in-out;
 }
 .redes img:hover{
@@ -296,4 +306,122 @@ BOTON ORKONATRA
     height:100%;
     object-fit:cover;
     border-radius:50%;
+}
+
+/* pantallas de 27 pulgadas */
+@media (min-width:1800px){
+    .principal h1{
+        font-size:95px;
+    }
+    .principal h3{
+        width:70%;
+        margin:50px auto;
+        font-size:34px;
+    }
+    .Mural{
+        margin:40px 140px;
+        grid-template-rows: 180px 380px 380px 180px;
+        gap:30px;
+    }
+}
+/* pantallas comunes */
+@media (max-width:1400px){
+    .principal h1{
+        font-size:70px;
+    }
+    .principal h3{
+        width:80%;
+        margin:40px auto;
+        font-size:26px;
+    }
+    .Mural{
+        margin:30px;
+    }
+}
+/* tablets */
+@media (max-width:992px){
+    .principal h1{
+        font-size:58px;
+    }
+    .principal h3{
+        width:90%;
+        margin:30px auto;
+        font-size:22px;
+    }
+    .Mural{
+        grid-template-areas:
+        "Uno Dos"
+        "Tres Tres"
+        "Cuatro Cinco"
+        "Seis Siete";
+        grid-template-columns:1fr 1fr;
+        grid-template-rows: 350px 420px 250px 250px;
+        margin:25px;
+        gap:18px;
+    }
+    .pie{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        padding:30px 20px;
+}
+    .info{
+        margin-bottom:30px;
+    }
+    .redes{
+        margin-bottom:30px;
+}
+    .mapa iframe{
+        width:100%;
+        max-width:420px;
+}
+    .nav{
+        gap:15px;
+}
+    .nav a{
+        margin:5px 0;
+}
+}
+/* celular */
+@media (max-width:480px){
+    .principal{
+        padding:20px;
+    }
+    .principal h1{
+        font-size:42px;
+        text-align:center;
+    }
+    .principal h3{
+        margin:25px auto;
+        width:95%;
+        font-size:18px;
+    }
+    .Mural{
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+        margin:20px;
+    }
+    .Mural img{
+        width:100%;
+        height:320px;
+        object-fit:cover;
+        transform:none !important;
+    }
+    .encabezado{
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+    }
+    .encabezado img{
+        margin:0 0 20px 0;
+    }
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px
+    }
+    .extra, .contactos{
+        font-size:18px;
+    }
 }
