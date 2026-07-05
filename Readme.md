@@ -148,5 +148,3 @@ No se autoriza el uso comercial de recursos protegidos por derechos de autor que
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Warhammer40K](https://img.shields.io/badge/Theme-Warhammer%2040K-darkgreen?style=for-the-badge)
-
-Le da una apariencia mucho más cuidada y profesional al repositorio, especialmente si es un proyecto para
