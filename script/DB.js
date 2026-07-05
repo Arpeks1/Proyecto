@@ -362,7 +362,7 @@ export const DB=[
     {
         ID:46,
         Nombre: "Extra",
-        Precio:"5300",
+        Precio:"10000",
         Stock:"23",
         Descripcion:"llavero del logo de la pagina",
         Imagen:"../src/productos/46.png"

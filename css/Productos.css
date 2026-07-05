@@ -368,6 +368,12 @@
     padding: 15px;
     flex-direction: column;
 }
+.Titulo-filtros{
+    text-align: center;
+    color: #2c410b;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
 .Checklist{
     display: flex;
     flex-direction: column;
@@ -380,13 +386,49 @@
 .Checklist label{
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
     background: whitesmoke;
     padding: 10px 15px;
     border-radius: 15px;
     box-shadow: 1px 1px 4px gray;
     cursor: pointer;
     font-size: 18px;
+    transition: 0.15s ease-in-out;
+}
+.Checklist label:has(input:checked){
+    background: #698D35;
+    color: whitesmoke;
+    box-shadow: 1px 1px 4px #35471b;
+}
+.Checklist input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid #698D35;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    background: whitesmoke;
+    transition: 0.15s ease-in-out;
+}
+.Checklist label:has(input:checked) input[type="checkbox"]{
+    border-color: whitesmoke;
+    background: #4d6626;
+}
+.Checklist input[type="checkbox"]:checked::after{
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    font-size: 14px;
+    font-weight: bold;
+}
+.Checklist input[type="checkbox"]:hover{
+    border-color: #962f33;
 }
 .Checklist button{
     background: #962f33;
@@ -403,6 +445,7 @@
     background: #7a2529;
     transform: scale(1.05);
 }
+
 /* buscador */
 .Filtro-Barra{
     display: flex;

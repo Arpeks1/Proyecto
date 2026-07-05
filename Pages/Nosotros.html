@@ -41,16 +41,16 @@
         <section class="Personajes">
             <div class="Dioses">
                 <div class="Gork">
-                    <h2>Gork</h2>
+                    <h2>Gorko</h2>
                     <img src="../src/Nosotros/Gork_Mork.png" alt="Gork">
                     <h4>"Brutal pero Astuto"</h4>
-                    <p>Gork es conocido por ser "brutal, pero astuto", favoreciendo la fuerza desmedida, la violencia directa y el enfrentamiento cara a cara. Para quienes siguen su ejemplo, la mejor estrategia consiste en avanzar sin miedo, aplastar al enemigo con una fuerza imparable y demostrar quién manda mediante el combate.</p>
+                    <p>Gorko es conocido por ser "brutal, pero astuto", favoreciendo la fuerza desmedida, la violencia directa y el enfrentamiento cara a cara. Para quienes siguen su ejemplo, la mejor estrategia consiste en avanzar sin miedo, aplastar al enemigo con una fuerza imparable y demostrar quién manda mediante el combate.</p>
                 </div>
                 <div class="Mork">
-                    <h2>Mork</h2>
+                    <h2>Morko</h2>
                     <img src="../src/Nosotros/Mork_Gork.png" alt="Mork">
                     <h4>"Astuto pero Brutal"</h4>
-                    <p>Mork, por su parte, es "astuto, pero brutal", prefiriendo la sorpresa, los engaños, las emboscadas y el uso de la inteligencia para obtener ventaja antes de asestar un golpe devastador. Sin embargo, incluso la astucia de Mork termina resolviéndose a golpes, porque para un Orko ninguna pelea está completa sin una buena dosis de violencia.</p>
+                    <p>Morko, por su parte, es "astuto, pero brutal", prefiriendo la sorpresa, los engaños, las emboscadas y el uso de la inteligencia para obtener ventaja antes de asestar un golpe devastador. Sin embargo, incluso la astucia de Mork termina resolviéndose a golpes, porque para un Orko ninguna pelea está completa sin una buena dosis de violencia.</p>
                 </div>
             </div>
             <button id="Tributo">Rendir Tributo <i>💚</i></button>
@@ -63,7 +63,7 @@
             <div class="Lider Uruk">
                 <img src="../src/Nosotros/Ghazghkull Mag Uruk Thraka.jpeg" alt="Ghazghkull Mag Uruk Thraka">
                 <h3>Ghazghkull Mag Uruk</h3> <h3>Thraka</h3>
-                <p>Ghazghkull Thraka es el Orko más famoso y temido de toda la galaxia. Considerado por muchos como el mayor Señor de la Guerra Orko de la era actual, ha conseguido unir incontables tribus bajo un mismo estandarte para lanzar gigantescas ¡WAAAGH! contra los enemigos del Imperio. <br> Tras sobrevivir a una grave herida en la cabeza, Ghazghkull afirmó haber recibido una visión de los dioses orkos, Gork y Mork, quienes le revelaron que estaba destinado a liderar la mayor guerra jamás vista. Desde entonces, dedica su existencia a reunir ejércitos cada vez más grandes y sembrar el caos por toda la galaxia. <br> A diferencia de la mayoría de los Orkos, Ghazghkull posee una inteligencia estratégica excepcional. Sabe cuándo atacar, cómo organizar enormes invasiones y cómo inspirar a millones de Orkos para que lo sigan sin cuestionarlo. Su inmensa armadura, su brutal fuerza física y su carisma lo convierten en una auténtica leyenda viviente.</p>
+                <p>Ghazghkull Thraka es el Orko más famoso y temido de toda la galaxia. Considerado por muchos como el mayor Señor de la Guerra Orko de la era actual, ha conseguido unir incontables tribus bajo un mismo estandarte para lanzar gigantescas ¡WAAAGH! contra los enemigos del Imperio. <br> Tras sobrevivir a una grave herida en la cabeza, Ghazghkull afirmó haber recibido una visión de los dioses orkos, Gorko y Morko, quienes le revelaron que estaba destinado a liderar la mayor guerra jamás vista. Desde entonces, dedica su existencia a reunir ejércitos cada vez más grandes y sembrar el caos por toda la galaxia. <br> A diferencia de la mayoría de los Orkos, Ghazghkull posee una inteligencia estratégica excepcional. Sabe cuándo atacar, cómo organizar enormes invasiones y cómo inspirar a millones de Orkos para que lo sigan sin cuestionarlo. Su inmensa armadura, su brutal fuerza física y su carisma lo convierten en una auténtica leyenda viviente.</p>
             </div>
             <div class="Lider Snikrot">
                 <img src="../src/Nosotros/Boss Snikrot.jpeg" alt="Boss Snikrot">
@@ -227,6 +227,44 @@ audioOrk.addEventListener("ended",()=>{
 
     sonando=false;
 
+});
+
+</script>
+
+<audio id="audioTributo">
+    <source src="../src/audios/WAGH.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const botonTributo = document.getElementById("Tributo");
+const audioTributo = document.getElementById("audioTributo");
+
+let rindiendoTributo = false;
+
+botonTributo.addEventListener("click", () => {
+
+    if (!rindiendoTributo) {
+
+        audioTributo.currentTime = 0;
+        audioTributo.play();
+        rindiendoTributo = true;
+        botonTributo.innerHTML = 'WAAGH <i>💚</i>';
+
+    } else {
+
+        audioTributo.pause();
+        audioTributo.currentTime = 0;
+        rindiendoTributo = false;
+        botonTributo.innerHTML = 'Rendir Tributo <i>💚</i>';
+
+    }
+
+});
+
+audioTributo.addEventListener("ended", () => {
+    rindiendoTributo = false;
+    botonTributo.innerHTML = 'Rendir Tributo <i>💚</i>';
 });
 
 </script>

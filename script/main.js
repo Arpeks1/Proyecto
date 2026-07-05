@@ -54,20 +54,34 @@ Filtro.addEventListener('keyup', function () {
 })
 
 // ----> filtros
+// ----> filtros
 const borrarfiltros = document.getElementById("todo")
-const FiltroPinturas = document.getElementById("pinturas")
-const FiltroMiniatura = document.getElementById("miniatura")
-const FiltroFigura = document.getElementById("figura")
-const FiltroExtra = document.getElementById("extra")
-const FiltroRopa = document.getElementById("ropa")
-const FiltroLibro = document.getElementById("libro")
 
+const filtrosCategoria = [
+    { el: document.getElementById("pinturas"), palabra: "pinturas" },
+    { el: document.getElementById("miniatura"), palabra: "miniatura" },
+    { el: document.getElementById("figura"), palabra: "figura" },
+    { el: document.getElementById("extra"), palabra: "extra" },
+    { el: document.getElementById("ropa"), palabra: "ropa" },
+    { el: document.getElementById("libro"), palabra: "libro" },
+]
 
+// ----> filtrar (mira TODOS los checkbox marcados, no solo el que tocaste)
+const FiltrarDatos = () => {
 
-// ----> filtrar
-const FiltrarDatos = (parametro) => {
+    const palabrasActivas = filtrosCategoria
+        .filter(f => f.el.checked)
+        .map(f => f.palabra)
 
-    let Filtros = DB.filter(i => i.Nombre.toLowerCase().includes(parametro))
+    // si no hay ningun checkbox marcado, mostramos todo (como si hubieras apretado "Borrar Filtros")
+    if (palabrasActivas.length === 0) {
+        TraerDatos(DB)
+        return
+    }
+
+    let Filtros = DB.filter(i =>
+        palabrasActivas.some(palabra => i.Nombre.toLowerCase().includes(palabra))
+    )
 
     if (Filtros.length > 0) {
         TraerDatos(Filtros)
@@ -78,30 +92,10 @@ const FiltrarDatos = (parametro) => {
 }
 
 borrarfiltros.addEventListener("click", () => {
-    FiltrarDatos("")
-
+    filtrosCategoria.forEach(f => f.el.checked = false)
+    TraerDatos(DB)
 })
 
-FiltroPinturas.addEventListener("click", () => {
-    FiltrarDatos("pinturas")
-})
-
-FiltroMiniatura.addEventListener("click", () => {
-    FiltrarDatos("miniatura")
-})
-
-FiltroFigura.addEventListener("click", () => {
-    FiltrarDatos("figura")
-})
-
-FiltroExtra.addEventListener("click", () => {
-    FiltrarDatos("extra")
-})
-
-FiltroLibro.addEventListener("click", () => {
-    FiltrarDatos("libro")
-})
-
-FiltroRopa.addEventListener("click", () => {
-    FiltrarDatos("ropa")
+filtrosCategoria.forEach(f => {
+    f.el.addEventListener("change", FiltrarDatos)
 })
