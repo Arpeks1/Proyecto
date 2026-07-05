@@ -192,22 +192,25 @@
     max-width: 500px;
     text-align: center;
     filter: drop-shadow(2px 2px 6px #35471b);
-    transition: opacity 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 .comentario-card.cambiando{
     opacity: 0;
 }
 .comentario-card .comentario-texto{
-    font-size: 16px;
+    font-size: 25px;
     font-style: italic;
     margin-bottom: 10px;
 }
 .comentario-card .comentario-autor{
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 600;
     display: block;
 }
-
+.comentario-card:hover{
+    transform: scale(0.95);
+    filter: drop-shadow(4px 4px 10px #35471b);
+}
 .tarjetas{
     position: relative;
     display: flex;

@@ -18,7 +18,7 @@
         </nav>
     </header>
     <main class="principal">
-        <div class="contenedor_formulario">
+        <!-- <div class="contenedor_formulario">
             <img src="../src/Contactos/orko.jpg.jpeg" alt="Orko">
             <form action="">
                 <label for="">Nombre</label>
@@ -31,6 +31,45 @@
                 <textarea name="nose" id="nose"></textarea>
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
+        </div> -->
+        <div class="Contenedor-Principal">
+            <img src="../src/Contactos/orko.jpg.jpeg" alt="Orko Pensativo">
+        <div class="Formulario-total">
+            <div class="Registro-Inicio">
+                <button class="Form-btn activo" id="Form-Registro">Registrarse</button>
+                <button class="Form-btn" id="Form-Inicio">Iniciar Sesion</button>
+            </div>
+            <form id="Formulario-Registro" class="Formulario activo">
+                <h3>Formulario de Registro</h3>
+                <div class="Inputs">
+                    <label> Nombre Completo</label>
+                    <input type="text" placeholder="Nombre">
+                </div>
+                <div class="Inputs">
+                    <label>Correo Electrónico</label>
+                    <input type="email" placeholder="@Email">
+                </div>
+                <div class="Inputs">
+                    <label>Crear Contraseña</label>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <button type="submit" class="btn Registro">Confirmar Registro</button>
+            </form>
+
+            <form id="Formulario-Inicio" class="Formulario">
+                <h3>Ingresar a la Tienda</h3>
+                <div class="Inputs">
+                    <label>Correo Electrónico</label>
+                    <input type="email" placeholder="@Email">
+                </div>
+                <div class="Inputs">
+                    <label>Contraseña</label>
+                    <input type="password" placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn Inicio">Ingresar</button>
+            </form>
+        </div>
+            
         </div>
     </main>
     <footer class="pie">
@@ -58,9 +97,9 @@
         </div>
     </footer>
 
-    <button id="boton-modo-oscuro">🌙</button>
+<button id="boton-modo-oscuro">🌙</button>
 
-    <button id="boton-orkonatra">
+<button id="boton-orkonatra">
     <img src="../src/iconos/orkonatra.png" alt="ORKONATRA">
 </button>
 
@@ -119,6 +158,23 @@ audioOrk.addEventListener("ended",()=>{
 
 });
 
+</script>
+<script>
+    // Lógica para alternar pestañas entre Iniciar Sesión y Registro
+        const btnRegistro = document.getElementById('Form-Registro');
+        const btnInicio = document.getElementById('Form-Inicio');
+        const formRegistro = document.getElementById('Formulario-Registro');
+        const formInicio = document.getElementById('Formulario-Inicio');
+
+        btnRegistro.addEventListener('click', () => {
+            btnRegistro.classList.add('activo'); btnInicio.classList.remove('activo');
+            formRegistro.classList.add('activo'); formInicio.classList.remove('activo');
+        });
+
+        btnInicio.addEventListener('click', () => {
+            btnInicio.classList.add('activo'); btnRegistro.classList.remove('activo');
+            formInicio.classList.add('activo'); formRegistro.classList.remove('activo');
+        });
 </script>
 </body>
 </html>

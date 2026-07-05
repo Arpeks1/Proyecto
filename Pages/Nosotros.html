@@ -53,7 +53,7 @@
                     <p>Morko, por su parte, es "astuto, pero brutal", prefiriendo la sorpresa, los engaños, las emboscadas y el uso de la inteligencia para obtener ventaja antes de asestar un golpe devastador. Sin embargo, incluso la astucia de Mork termina resolviéndose a golpes, porque para un Orko ninguna pelea está completa sin una buena dosis de violencia.</p>
                 </div>
             </div>
-            <button id="Tributo">Rendir Tributo <i>💚</i></button>
+            <button id="Tributo">Rendir Tributo <b>💚</b></button>
             <div class="Lideres">
                 <div class="Lider Gutsmek">
                 <img src="../src/Nosotros/Wazdakka Gutsmek.jpeg" alt="Wazdakka Gutsmek">
@@ -249,14 +249,14 @@ botonTributo.addEventListener("click", () => {
         audioTributo.currentTime = 0;
         audioTributo.play();
         rindiendoTributo = true;
-        botonTributo.innerHTML = 'WAAGH <i>💚</i>';
+        botonTributo.innerHTML = 'WAAGH <b>💚</b>';
 
     } else {
 
         audioTributo.pause();
         audioTributo.currentTime = 0;
         rindiendoTributo = false;
-        botonTributo.innerHTML = 'Rendir Tributo <i>💚</i>';
+        botonTributo.innerHTML = 'Rendir Tributo <b>💚</b>';
 
     }
 
@@ -264,7 +264,7 @@ botonTributo.addEventListener("click", () => {
 
 audioTributo.addEventListener("ended", () => {
     rindiendoTributo = false;
-    botonTributo.innerHTML = 'Rendir Tributo <i>💚</i>';
+    botonTributo.innerHTML = 'Rendir Tributo <b>💚</b>';
 });
 
 </script>

@@ -271,6 +271,12 @@
 #Tributo:hover{
     transform: scale(0.95);
 }
+#Tributo b{
+    transition: 0.2s ease-in-out;
+}
+#Tributo:hover b{
+    filter: drop-shadow(0px -19px 1px white);
+}
 .Lideres{
     display: flex;
     justify-content: space-evenly;
