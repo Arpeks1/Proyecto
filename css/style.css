@@ -96,7 +96,6 @@ html{
 .Promociones{
     overflow: hidden;
     width:min(1400px, 92%);
-    overflow: hidden;
     margin:auto;
     border-radius: 10px;
     background: #4e6928;
@@ -127,10 +126,13 @@ html{
 .carousel img:hover{
     transform: scale(1.1);
 }
+
+/* Le indica que debe trasladar las imagenes a lo largo del eje X, siendo que 5 son las imagenes, 12rem son las medidas del carousel y 2rem es el el gap que tienen */
 @keyframes animacion{
     to{
         transform: translateX(calc(-5 * (12rem + 2rem)));
     }
+
 }
 .Titulos{
     justify-self: center;
@@ -197,6 +199,71 @@ html{
     border-radius: 15px;
     object-fit: cover;
 }
+.Clanes{
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.Clan{
+    margin: 30px auto;
+    width:100%;
+    max-width:380px;
+    min-height:auto;
+    background:#7e7e7e;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5%;
+    justify-content: space-around;
+    filter: drop-shadow(3px 3px 6px #3f3f3f);
+    transition: 0.2s ease-in-out;
+}
+.Clan img{
+    width: 250px;
+    height: 250px;
+    border-radius: 40%;
+    filter: drop-shadow(2px 2px 6px black);
+    margin-top: 10px;
+}
+.Clan h2{
+    font-size:clamp(2rem,4vw,4rem);
+    text-shadow: 1px 1px 6px #555555;
+}
+.Clan p{
+    font-weight: 600;
+    text-align: center;
+    padding: 5px;
+}
+.Clan button{
+    margin-left: 25px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: #f7f7f7;
+    border: none;
+    filter: drop-shadow(2px 2px 3px black);
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+.Clan a{
+    text-decoration: none;
+    color: inherit;
+}
+.Clan:hover{
+    transform: scale(0.95);
+    filter: drop-shadow(4px 4px 8px #304d08);
+    background: #4a7a07;
+}
+.Clan button:hover{
+    font-size: 15px;
+    font-weight: 700;
+    filter: drop-shadow(4px 4px 6px #444444);
+    background: #cccccc;
+}
+
 .B{
     justify-self: left;
     padding-left: 15px;
@@ -209,7 +276,6 @@ html{
 }
 .Informacion{
     padding: 25px;
-
 }
 .destacados{
     display:flex;
@@ -217,6 +283,10 @@ html{
     gap:30px;
     justify-content:center;
 }
+
+/* SECCION
+DE
+COMENTARIOS */
 
 .comentario-destacado{
     display: flex;
@@ -250,6 +320,11 @@ html{
     transform: scale(0.95);
     filter: drop-shadow(4px 4px 10px #35471b);
 }
+
+/* TARJETAS 
+DE 
+COMPRA */
+
 .tarjetas{
     position: relative;
     display: flex;
@@ -324,70 +399,6 @@ html{
 .carrito{
     width: 20px;
     height: 20px;
-}
-.Clanes{
-    margin: 30px auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
-.Clan{
-    margin: 30px auto;
-    width:100%;
-    max-width:380px;
-    min-height:auto;
-    background:#7e7e7e;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 5%;
-    justify-content: space-around;
-    filter: drop-shadow(3px 3px 6px #3f3f3f);
-    transition: 0.2s ease-in-out;
-}
-.Clan img{
-    width: 250px;
-    height: 250px;
-    border-radius: 40%;
-    filter: drop-shadow(2px 2px 6px black);
-    margin-top: 10px;
-}
-.Clan h2{
-    font-size:clamp(2rem,4vw,4rem);
-    text-shadow: 1px 1px 6px #555555;
-}
-.Clan p{
-    font-weight: 600;
-    text-align: center;
-    padding: 5px;
-}
-.Clan button{
-    margin-left: 25px;
-    padding: 10px 15px;
-    border-radius: 15px;
-    background-color: #f7f7f7;
-    border: none;
-    filter: drop-shadow(2px 2px 3px black);
-    transition: 0.1s ease-in-out;
-    cursor: pointer;
-    margin: 10px 0px;
-}
-.Clan a{
-    text-decoration: none;
-    color: inherit;
-}
-.Clan:hover{
-    transform: scale(0.95);
-    filter: drop-shadow(4px 4px 8px #304d08);
-    background: #4a7a07;
-}
-.Clan button:hover{
-    font-size: 15px;
-    font-weight: 700;
-    filter: drop-shadow(4px 4px 6px #444444);
-    background: #cccccc;
 }
 /* footer */
 .pie{

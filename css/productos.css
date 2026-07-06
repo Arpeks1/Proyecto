@@ -267,16 +267,6 @@ html{
     padding: 25px 0;
     display: flex;
     justify-content: space-evenly;
-}
-.contenedor{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-/* main */
-.principal{
-    background: #EFF1ED;
-    padding: 25px 0;
     padding-bottom: 99px;
 }
 .contenedor{
@@ -370,6 +360,7 @@ html{
 .Tarjetas .btn-comprar p{
     color: black;
 }
+
 /* filtros */
 .Filtros{
     display: flex;
@@ -467,12 +458,13 @@ html{
 }
 .icono-buscar{
     position: absolute;
-    left: 15px;
+    left: 10px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 16px;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.8;
+    z-index: 5;
 }
 .Filtro-Barra input{
     width: 100%;
