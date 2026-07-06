@@ -64,8 +64,11 @@
 
         <section class="Productos">
             <div class="Filtro-Barra">
-                <input type="text" id="Filtro">
-            </div>
+    <div class="buscador">
+        <span class="icono-buscar">🔍</span>
+        <input type="text" id="Filtro" placeholder="buscar un chicoz">
+    </div>
+</div>
             <div class="contenedor">
             </div>
         </section>
@@ -100,6 +103,10 @@
     
     <button id="boton-modo-oscuro">🌙</button>
 
+    <button id="boton-subir">
+    <img src="../src/iconos/flecha.png" alt="Subir arriba">
+    </button>
+
     <button id="boton-orkonatra">
     <img src="../src/iconos/orkonatra.png" alt="ORKONATRA">
 </button>
@@ -107,6 +114,12 @@
     <source src="../src/audios/40K Ork - What A Wonderful WAAAGH!.mp3" type="audio/mpeg">
 </audio>
 <script>
+
+const botonSubir = document.getElementById("boton-subir");
+
+botonSubir.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 const botonModo = document.getElementById("boton-modo-oscuro");
 

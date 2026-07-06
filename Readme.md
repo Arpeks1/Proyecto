@@ -74,7 +74,6 @@ Proyecto
 │   ├── Nosotros
 │   ├── audios
 │   ├── banners
-│   ├── fondo
 │   ├── iconos
 │   ├── logos
 │   └── productos
