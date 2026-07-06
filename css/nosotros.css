@@ -913,3 +913,26 @@ html.modo-oscuro iframe{
     font-size:38px;
     }
 }
+@media (max-width:1367px) {
+    .Izquierda img{
+        width: 420px;
+        position: absolute;
+        bottom: 90px;
+    }
+    .Izquierda ul{
+        position: absolute;
+        top: -95px;
+    }
+    .Snikrot{
+        max-height: 700px;
+        max-width: 400px;
+    }
+    .Uruk{
+        max-height: 950px;
+        max-width: 400px;
+    }
+    .Gutsmek{
+        max-width: 400px;
+        max-height: 700px;
+    }
+}
