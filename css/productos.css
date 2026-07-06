@@ -460,19 +460,47 @@ html{
     justify-content: center;
     padding: 0 15px 20px;
 }
+.Filtro-Barra .buscador{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+.icono-buscar{
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    opacity: 0.6;
+}
 .Filtro-Barra input{
     width: 100%;
     max-width: 400px;
-    padding: 10px 15px;
-    border-radius: 15px;
-    border: 1px solid gainsboro;
+    padding: 12px 15px 12px 40px;
+    border-radius: 25px;
+    border: 2px solid #698D35;
     filter: drop-shadow(0px 5px 6px #b9b9b9);
     font-size: 16px;
+    background: whitesmoke;
+    transition: 0.2s ease-in-out;
+}
+.Filtro-Barra input::placeholder{
+    color: gray;
+    font-style: italic;
+}
+.Filtro-Barra input:focus{
+    outline: none;
+    border-color: #962f33;
+    box-shadow: 0 0 8px #962f3355;
+    transform: scale(1.02);
 }
 #Falta{
-    margin-top: 150px;
-    font-size: 50px;
-    font-weight: 600;
+    display: block;
+    margin: 60px auto;
+    max-width: 850px;
+    width: 95%;
+    filter: drop-shadow(2px 5px 6px gray);
 }
 /* footer */
 .pie{
@@ -586,6 +614,34 @@ html.modo-oscuro img,
 html.modo-oscuro video,
 html.modo-oscuro iframe{
     filter: invert(1) hue-rotate(180deg) !important;
+}
+
+#boton-subir{
+    position: fixed;
+    bottom: 20px;
+    right: 125px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    z-index: 9999;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#boton-subir:hover{
+    transform: scale(1.15);
+}
+
+#boton-subir img{
+    width: 200%;
+    height: 200%;
+    object-fit: contain;
 }
 
 /* ===========================

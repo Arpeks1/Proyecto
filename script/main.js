@@ -39,21 +39,30 @@ TraerDatos(DB)
 // --> Tomamos el input de HTML con el ID(#)Filtro
 let Filtro = document.querySelector('#Filtro')
 let Contenedor = document.querySelector('.contenedor')
+
+// se muestra cuando ningun producto matchea el filtro/busqueda
+function mostrarNoEncontrado() {
+    Contenedor.innerHTML = `<img id="Falta" src="../src/banners/nothing.png" alt="Producto no encontrado">`
+}
+
 /* Agregamos un evento al input, cada vez que se escriba una tecla, se ejecuta la función */
 Filtro.addEventListener('keyup', function () {
     // --> Evitamos que se ejecute el evento por defecto del input
-    let Filtros = DB.filter(i => i.Nombre.toLowerCase().includes(Filtro.value.toLowerCase()))
+    let texto = Filtro.value.toLowerCase()
+    let Filtros = DB.filter(i =>
+        i.Nombre.toLowerCase().includes(texto) ||
+        i.Descripcion.toLowerCase().includes(texto)
+    )
     // --> Llamamos a la función TraerDatos y le pasamos el resultado del filtro como argumento
     if (Filtros.length > 0) {
         TraerDatos(Filtros)
     }
     else {
-        Contenedor.innerHTML = `<p id="Falta">Producto no Encontrado</p>`
+        mostrarNoEncontrado()
     }
 
 })
 
-// ----> filtros
 // ----> filtros
 const borrarfiltros = document.getElementById("todo")
 
@@ -87,7 +96,7 @@ const FiltrarDatos = () => {
         TraerDatos(Filtros)
     }
     else {
-        Contenedor.innerHTML = `<p>Producto no Encontrado</p>`
+        mostrarNoEncontrado()
     }
 }
 
